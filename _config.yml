@@ -1,0 +1,26 @@
+# Site settings
+title: Bilingual Blog
+description: A minimalist bilingual blog
+
+# Build settings
+markdown: kramdown
+permalink: /:title/
+
+# GitHub Pages settings
+url: "" # the base hostname & protocol for your site, e.g. http://example.com
+baseurl: "" # the subpath of your site, e.g. /blog
+
+# Comments settings
+comments_dir: _data/comments
+
+# Plugins
+plugins:
+  - jekyll-feed
+
+# Exclude files from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - .git

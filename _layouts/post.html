@@ -1,0 +1,28 @@
+---
+layout: default
+---
+<article class="post">
+    <header class="post-header">
+        <h1>{{ page.title }}</h1>
+        <time datetime="{{ page.date | date_to_xmlschema }}">
+            {{ page.date | date: "%B %d, %Y" }}
+        </time>
+    </header>
+
+    <div class="post-content">
+        {{ content }}
+    </div>
+
+    <section class="comments">
+        <h2>Comments</h2>
+        <div id="comments-container"></div>
+        <p class="comment-info">
+            To add a comment, please create a pull request to edit the 
+            <a href="https://github.com/USERNAME/REPO/blob/main/_data/comments/{{ page.date | date: '%Y-%m-%d' }}-{{ page.slug }}.yml">
+                comments file
+            </a>
+        </p>
+    </section>
+</article>
+
+<script src="/assets/js/comments.js"></script>
