@@ -17,13 +17,14 @@ layout: default
         <h2>Comments</h2>
         <div id="comments-container"></div>
         <script type="application/json" id="comments-data">
-            {{ site.data.comments[page.slug] | jsonify }}
+            {% assign comment_key = page.date | date: "%Y-%m-%d" | append: "-" | append: page.slug %}
+            {{ site.data.comments[comment_key] | jsonify }}
         </script>
         <div class="comment-info">
             <p><strong>How to add a comment:</strong></p>
             <ol>
                 <li>
-                    <a href="https://github.com/{{ site.github.owner_name | default: 'lsm' }}/{{ site.github.repository_name | default: 'lsm.github.io' }}/edit/main/_data/comments/{{ page.slug }}.yml" target="_blank">
+                    <a href="https://github.com/{{ site.github.owner_name | default: 'lsm' }}/{{ site.github.repository_name | default: 'lsm.github.io' }}/edit/main/_data/comments/{{ comment_key }}.yml" target="_blank">
                         Edit the comments file directly on GitHub
                     </a>
                 </li>
