@@ -6,6 +6,9 @@ description: A place to write
 markdown: kramdown
 permalink: /:title/
 
+# Theme settings - disable GitHub Pages default theme
+theme: null
+
 # GitHub Pages settings
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 baseurl: "" # the subpath of your site, e.g. /blog

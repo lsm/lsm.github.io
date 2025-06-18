@@ -29,18 +29,42 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         const commentsList = comments.map(comment => {
-            const date = comment.date ? new Date(comment.date) : new Date();
-            const formattedDate = date.toLocaleDateString('en-US', {
-                year: 'numeric',
-                month: 'long',
-                day: 'numeric'
-            });
+            let formattedDate = 'Unknown date';
+            
+            if (comment.date) {
+                try {
+                    // Handle different date formats
+                    let dateObj;
+                    if (typeof comment.date === 'string') {
+                        // Try parsing ISO format first
+                        dateObj = new Date(comment.date);
+                        // If that fails, try other common formats
+                        if (isNaN(dateObj.getTime())) {
+                            // Try parsing as YYYY-MM-DD HH:MM:SS format
+                            const dateStr = comment.date.replace(/(\d{4}-\d{2}-\d{2})\s+(\d{2}:\d{2}:\d{2})/, '$1T$2');
+                            dateObj = new Date(dateStr);
+                        }
+                    } else {
+                        dateObj = new Date(comment.date);
+                    }
+                    
+                    if (!isNaN(dateObj.getTime())) {
+                        formattedDate = dateObj.toLocaleDateString('en-US', {
+                            year: 'numeric',
+                            month: 'long',
+                            day: 'numeric'
+                        });
+                    }
+                } catch (error) {
+                    console.log('Error parsing date:', comment.date, error);
+                }
+            }
             
             return `
                 <div class="comment">
                     <div class="comment-header">
                         <strong class="comment-author">${escapeHtml(comment.author)}</strong>
-                        <time class="comment-date" datetime="${comment.date}">${formattedDate}</time>
+                        <time class="comment-date" datetime="${comment.date || ''}">${formattedDate}</time>
                     </div>
                     <div class="comment-content">
                         ${escapeHtml(comment.content).replace(/\n/g, '<br>')}
@@ -51,8 +75,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
         commentsContainer.innerHTML = commentsList;
     }
-
-
 
     function escapeHtml(unsafe) {
         if (!unsafe) return '';

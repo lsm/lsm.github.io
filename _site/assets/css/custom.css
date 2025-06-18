@@ -1,5 +1,4 @@
----
----
+/* Custom styles to override GitHub Pages theme */
 
 @font-face {
     font-family: 'Kaiti';
@@ -8,24 +7,24 @@
 }
 
 :root {
-    --text-color: #f0f0f0 !important;
-    --bg-color: #1a1a1a !important;
-    --link-color: #cccccc !important;
-    --border-color: #333333 !important;
-    --secondary-text: #999999 !important;
-    --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
-    --font-serif: "Kaiti SC", "Kai", "STKaiti", "KaiTi", "adobe-kaiti-std", serif !important;
+    --text-color: #f0f0f0;
+    --bg-color: #1a1a1a;
+    --link-color: #cccccc;
+    --border-color: #333333;
+    --secondary-text: #999999;
+    --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    --font-serif: "Kaiti SC", "Kai", "STKaiti", "KaiTi", "adobe-kaiti-std", serif;
 }
 
 [data-theme="light"] {
-    --text-color: #1a1a1a !important;
-    --bg-color: #ffffff !important;
-    --link-color: #404040 !important;
-    --border-color: #e0e0e0 !important;
-    --secondary-text: #666666 !important;
+    --text-color: #1a1a1a;
+    --bg-color: #ffffff;
+    --link-color: #404040;
+    --border-color: #e0e0e0;
+    --secondary-text: #666666;
 }
 
-/* Base styles */
+/* Override GitHub Pages styles with high specificity */
 html {
     font-size: 18px !important;
     line-height: 1.6 !important;
@@ -34,11 +33,9 @@ html {
 body {
     margin: 0 !important;
     padding: 0 !important;
-    font-family: 'Kaiti' !important;
+    font-family: 'Kaiti', serif !important;
     color: var(--text-color) !important;
     background: var(--bg-color) !important;
-    /* background: url('../images/stone-inscription.svg') no-repeat center center;
-    background-size: cover; */
     transition: background-color 0.3s, color 0.3s !important;
 }
 
@@ -49,22 +46,30 @@ body {
     font-family: var(--font-serif) !important;
 }
 
-/* Layout */
-header, 
-main, 
-footer {
+/* Layout with higher specificity */
+body > header, 
+body > main, 
+body > footer {
     max-width: 42rem !important;
     margin: 0 auto !important;
     padding: 1rem !important;
 }
 
 /* Navigation */
-nav {
+body > header nav {
     display: flex !important;
     justify-content: space-between !important;
     align-items: center !important;
     border-bottom: 1px solid var(--border-color) !important;
     padding-bottom: 1rem !important;
+}
+
+/* Site title */
+.site-title {
+    color: var(--text-color) !important;
+    text-decoration: none !important;
+    font-weight: bold !important;
+    font-size: 1.2rem !important;
 }
 
 /* Theme toggle */
@@ -82,10 +87,11 @@ nav {
     fill: var(--text-color) !important;
 }
 
-/* Typography */
-h1, h2, h3 {
+/* Typography overrides */
+h1, h2, h3, h4, h5, h6 {
     line-height: 1.2 !important;
     color: var(--text-color) !important;
+    font-family: 'Kaiti', serif !important;
 }
 
 a {
@@ -113,6 +119,8 @@ a:hover {
 
 .post-content {
     margin-top: 2rem !important;
+    line-height: 1.8 !important;
+    color: var(--text-color) !important;
 }
 
 /* Post layout */
@@ -127,12 +135,6 @@ a:hover {
     margin-bottom: 2rem !important;
 }
 
-.post-content {
-    margin: 2rem auto !important;
-    line-height: 1.8 !important;
-}
-
-
 /* Comments section */
 .comments {
     margin-top: 3rem !important;
@@ -143,6 +145,7 @@ a:hover {
 .comments h2 {
     margin-bottom: 1.5rem !important;
     font-size: 1.5rem !important;
+    color: var(--text-color) !important;
 }
 
 .comment {
@@ -170,6 +173,7 @@ a:hover {
 .comment-author {
     color: var(--text-color) !important;
     font-size: 1rem !important;
+    font-weight: bold !important;
 }
 
 .comment-date {
@@ -195,6 +199,7 @@ a:hover {
 
 .comment-info p {
     margin: 0.5rem 0 !important;
+    color: var(--secondary-text) !important;
 }
 
 .comment-info ol {
@@ -230,15 +235,25 @@ a:hover {
     margin: 1rem 0 !important;
 }
 
+/* Post list styles */
+.post-list {
+    padding: 0 !important;
+}
+
+.post-list h1 {
+    color: var(--text-color) !important;
+    margin-bottom: 2rem !important;
+}
+
 /* Responsive design */
 @media (max-width: 600px) {
     html {
         font-size: 16px !important;
     }
     
-    header, 
-    main, 
-    footer {
+    body > header, 
+    body > main, 
+    body > footer {
         padding: 0.5rem !important;
     }
-}
+} 
