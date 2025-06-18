@@ -1,3 +1,5 @@
+<div class="bilingual-post" markdown="1">
+
 # Bilingual Blog Guide
 
 This guide explains how to create bilingual blog posts with a clean, user-friendly syntax.
@@ -19,18 +21,26 @@ This content appears in both languages.
 
 
 
-:::lang:en
+
+<div class="lang-content lang-en" data-lang="en" markdown="1">
+
 
 # English Section
 This content only appears in English.
 
-:::lang:end
-:::lang:zh
+
+
+</div>
+
+<div class="lang-content lang-zh" data-lang="zh" markdown="1">
+
 
 # 中文部分
 这个内容只在中文中显示。
 
-:::lang:end
+
+
+</div>
 This conclusion appears in both languages.
 ```
 
@@ -71,11 +81,15 @@ The script will:
 
 
 
-:::lang:en
+
+<div class="lang-content lang-en" data-lang="en" markdown="1">
+
 
 English content here
 
-:::lang:end
+
+
+</div>
 ```
 
 2. **Process** with the streaming parser:
@@ -88,11 +102,15 @@ English content here
    
 
 
-:::lang:en
+
+<div class="lang-content lang-en" data-lang="en" markdown="1">
+
 
 English content here
 
-:::lang:end
+
+
+</div>
 ```
 
 ## Benefits of This Approach
@@ -290,4 +308,6 @@ Common content here...
 {: .lang-content .lang-zh data-lang="zh"}
 ```
 
-:::lang:end
+
+
+</div>

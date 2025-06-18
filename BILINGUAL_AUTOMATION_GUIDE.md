@@ -1,3 +1,5 @@
+<div class="bilingual-post" markdown="1">
+
 # Automated Bilingual Content System
 
 This guide explains the automated bilingual content processing system using GitHub Actions and Jekyll for your blog.
@@ -21,20 +23,28 @@ Introduction text appears in both languages.
 
 
 
-:::lang:en
+
+<div class="lang-content lang-en" data-lang="en" markdown="1">
+
 
 English content here.
 - Easy to write
 - Clean syntax
 
-:::lang:end
-:::lang:zh
+
+
+</div>
+
+<div class="lang-content lang-zh" data-lang="zh" markdown="1">
+
 
 中文内容在这里。
 - 易于编写
 - 清洁语法
 
-:::lang:end
+
+
+</div>
 Conclusion appears in both languages.
 ```
 
@@ -49,14 +59,20 @@ When you push to GitHub, the workflow:
 
 
 
-:::lang:en
+
+<div class="lang-content lang-en" data-lang="en" markdown="1">
+
 
 English content here.
 - Easy to write
 - Clean syntax
 
-:::lang:end
-:::lang:zh
+
+
+</div>
+
+<div class="lang-content lang-zh" data-lang="zh" markdown="1">
+
 
 中文内容在这里。
 - 易于编写
@@ -89,17 +105,27 @@ bilingual: true  # Required for processing
 
 Shared content (appears in both languages)
 
-:::lang:end
-:::lang:en
+
+
+</div>
+
+<div class="lang-content lang-en" data-lang="en" markdown="1">
+
 
 English-only content
 
-:::lang:end
-:::lang:zh
+
+
+</div>
+
+<div class="lang-content lang-zh" data-lang="zh" markdown="1">
+
 
 Chinese-only content
 
-:::lang:end
+
+
+</div>
 More shared content
 ```
 
@@ -112,7 +138,9 @@ All standard markdown works inside language blocks:
 
 
 
-:::lang:en
+
+<div class="lang-content lang-en" data-lang="en" markdown="1">
+
 
 ## English Heading
 
@@ -124,7 +152,9 @@ All standard markdown works inside language blocks:
 
 ```code blocks```
 
-:::lang:end
+
+
+</div>
 ```
 
 ## 🔧 Technical Details
@@ -237,4 +267,6 @@ Enable debug output by adding `debug: true` to your post's front matter. This wi
 
 The automated bilingual system makes it effortless to create multilingual content while maintaining full compatibility with GitHub Pages! 🎉
 
-:::lang:end
+
+
+</div>

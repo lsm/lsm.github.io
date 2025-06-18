@@ -1,3 +1,5 @@
+<div class="bilingual-post" markdown="1">
+
 ---
 layout: post
 title: "Automated Bilingual Test - 自动双语测试"
@@ -12,7 +14,9 @@ This post demonstrates the automated bilingual preprocessing with the official J
 
 
 
-:::lang:en
+
+<div class="lang-content lang-en" data-lang="en" markdown="1">
+
 
 ## English Content
 
@@ -32,8 +36,12 @@ The streaming parser processes this content character by character and converts 
 3. Official Jekyll workflow processes the files with our bilingual step
 4. Deploys to GitHub Pages with proper bilingual structure
 
-:::lang:end
-:::lang:zh
+
+
+</div>
+
+<div class="lang-content lang-zh" data-lang="zh" markdown="1">
+
 
 ## 中文内容
 
@@ -53,11 +61,15 @@ The streaming parser processes this content character by character and converts 
 3. 官方 Jekyll 工作流程使用我们的双语步骤处理文件
 4. 使用正确的双语结构部署到 GitHub Pages
 
-:::lang:end
+
+
+</div>
 ---
 
 This conclusion appears in both languages since it's outside the language blocks. The official Jekyll GitHub Actions workflow automatically wraps language-specific content in the appropriate HTML divs and adds the bilingual container.
 
 **Perfect for content creators!** 🎉 No more manual HTML conversion needed!
 
-:::lang:end
+
+
+</div>

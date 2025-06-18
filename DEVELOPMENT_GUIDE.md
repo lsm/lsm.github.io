@@ -1,3 +1,5 @@
+<div class="bilingual-post" markdown="1">
+
 # Development Guide - Bilingual Blog
 
 This guide explains how to develop your bilingual blog locally with proper `
@@ -40,7 +42,9 @@ Introduction text appears in both languages.
 
 
 
-:::lang:en
+
+<div class="lang-content lang-en" data-lang="en" markdown="1">
+
 
 ## English Content
 
@@ -50,8 +54,12 @@ Write your English content here using normal markdown.
 - **Bold text** works
 - [Links](https://example.com) work
 
-:::lang:end
-:::lang:zh
+
+
+</div>
+
+<div class="lang-content lang-zh" data-lang="zh" markdown="1">
+
 
 ## 中文内容
 
@@ -61,7 +69,9 @@ Write your English content here using normal markdown.
 - **粗体文本**有效
 - [链接](https://example.com)有效
 
-:::lang:end
+
+
+</div>
 Conclusion appears in both languages.
 ```
 
@@ -122,16 +132,24 @@ rake serve
 
 
 
-:::lang:en
+
+<div class="lang-content lang-en" data-lang="en" markdown="1">
+
 
 English content
 
-:::lang:end
-:::lang:zh
+
+
+</div>
+
+<div class="lang-content lang-zh" data-lang="zh" markdown="1">
+
 
 中文内容
 
-:::lang:end
+
+
+</div>
 ```
 
 ### Processed Files (What Jekyll Sees)
@@ -139,12 +157,21 @@ English content
 
 
 
-:::lang:en
+
+<div class="lang-content lang-en" data-lang="en" markdown="1">
+
 
 English content
 
-:::lang:end
-:::lang:zh
+
+
+</div>
+
+<div class="lang-content lang-zh" data-lang="zh" markdown="1">
+
+
+
+</div>
 
 中文内容
 ```
@@ -200,3 +227,5 @@ No manual processing needed for production!
 - **Maintain**: Use `rake clean` and `rake restore_bilingual` as needed
 
 Happy bilingual blogging! 🌍✨
+
+</div>

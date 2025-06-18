@@ -1,3 +1,5 @@
+<div class="bilingual-post" markdown="1">
+
 ---
 layout: post
 title: "Hello World - 你好，世界"
@@ -11,7 +13,9 @@ Welcome to this bilingual blog! This post demonstrates the streaming parser conc
 
 
 
-:::lang:en
+
+<div class="lang-content lang-en" data-lang="en" markdown="1">
+
 
 ## English Section
 
@@ -26,8 +30,12 @@ This is the English version of the content. You can write your thoughts, ideas, 
 
 This section will only be visible when English is selected.
 
-:::lang:end
-:::lang:zh
+
+
+</div>
+
+<div class="lang-content lang-zh" data-lang="zh" markdown="1">
+
 
 ## 中文部分
 
@@ -42,11 +50,15 @@ This section will only be visible when English is selected.
 
 这个部分只有在选择中文时才会显示。
 
-:::lang:end
+
+
+</div>
 ---
 
 This conclusion section appears in both languages since it's not wrapped in language divs.
 
 **For authors who want the clean `
 
-:::lang:end
+
+
+</div>

@@ -1,3 +1,5 @@
+<div class="bilingual-post" markdown="1">
+
 ---
 layout: post
 title: "Official Jekyll Workflow Test - 官方工作流测试"
@@ -12,7 +14,9 @@ This test post uses the official Jekyll GitHub Actions workflow with integrated 
 
 
 
-:::lang:en
+
+<div class="lang-content lang-en" data-lang="en" markdown="1">
+
 
 ## English Test - Official Workflow
 
@@ -24,8 +28,12 @@ This content should be automatically processed by the official Jekyll GitHub Act
 - **Proper deployment**: Uses official GitHub Pages deployment actions
 - **Better compatibility**: No more github-pages gem conflicts
 
-:::lang:end
-:::lang:zh
+
+
+</div>
+
+<div class="lang-content lang-zh" data-lang="zh" markdown="1">
+
 
 ## 中文测试 - 官方工作流
 
@@ -37,7 +45,11 @@ This content should be automatically processed by the official Jekyll GitHub Act
 - **正确部署**：使用官方 GitHub Pages 部署操作
 - **更好兼容性**：不再有 github-pages gem 冲突
 
-:::lang:end
+
+
+</div>
 If this post displays correctly with language switching, then our official Jekyll workflow integration is working perfectly! 🎉
 
-:::lang:end
+
+
+</div>
