@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bilingual Blog Guide</title>
+    <title>Marc Liu</title>
     <link rel="stylesheet" href="/assets/css/style.css">
     <link rel="stylesheet" href="/assets/css/custom.css">
     
@@ -26,170 +26,181 @@
         </nav>
     </header>
 
-    <h1 id="bilingual-blog-guide">Bilingual Blog Guide</h1>
+    <div class="bilingual-post">
 
-<p>This guide explains how to create bilingual blog posts with a clean, user-friendly syntax.</p>
+  <h1 id="bilingual-blog-guide">Bilingual Blog Guide</h1>
 
-<h2 id="user-friendly-syntax">User-Friendly Syntax</h2>
+  <p>This guide explains how to create bilingual blog posts with a clean, user-friendly syntax.</p>
 
-<p>You can write bilingual content using the clean <code class="language-plaintext highlighter-rouge">:::lang:</code> syntax:</p>
+  <h2 id="user-friendly-syntax">User-Friendly Syntax</h2>
 
-<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">---</span>
+  <p>You can write bilingual content using the clean `</p>
+  <div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">---</span>
 <span class="na">layout</span><span class="pi">:</span> <span class="s">post</span>
 <span class="na">title</span><span class="pi">:</span> <span class="s2">"</span><span class="s">My</span><span class="nv"> </span><span class="s">Bilingual</span><span class="nv"> </span><span class="s">Post"</span>
 <span class="na">date</span><span class="pi">:</span> <span class="s">2024-01-01</span>
 <span class="na">bilingual</span><span class="pi">:</span> <span class="no">true</span>
 <span class="nn">---</span>
 
-This content appears in both languages.
+This content appears in both languages.<span class="sb">
 
-:::lang:en
+
+</span><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"lang-content lang-en"</span> <span class="na">data-lang=</span><span class="s">"en"</span> <span class="na">markdown=</span><span class="s">"1"</span><span class="nt">&gt;</span>
+
 <span class="gh"># English Section</span>
-This content only appears in English.
-:::lang:end
+This content only appears in English.<span class="sb">
 
-:::lang:zh
+
+</span><span class="nt">&lt;/div&gt;</span><span class="sb">
+
+
+</span><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"lang-content lang-zh"</span> <span class="na">data-lang=</span><span class="s">"zh"</span> <span class="na">markdown=</span><span class="s">"1"</span><span class="nt">&gt;</span>
+
 <span class="gh"># 中文部分</span>
-这个内容只在中文中显示。
-:::lang:end
+这个内容只在中文中显示。<span class="sb">
+
+
+</span><span class="nt">&lt;/div&gt;</span>
 
 This conclusion appears in both languages.
-</code></pre></div></div>
+</code></pre></div>  </div>
 
-<h2 id="streaming-parser-implementation">Streaming Parser Implementation</h2>
+  <h2 id="streaming-parser-implementation">Streaming Parser Implementation</h2>
 
-<p>The bilingual system uses a <strong>streaming parser</strong> that processes content character by character (no regex):</p>
+  <p>The bilingual system uses a <strong>streaming parser</strong> that processes content character by character (no regex):</p>
 
-<h3 id="key-features">Key Features:</h3>
-<ul>
-  <li>✅ <strong>Character-by-character processing</strong> - No regex patterns</li>
-  <li>✅ <strong>Clean syntax</strong> - Just <code class="language-plaintext highlighter-rouge">:::lang:en</code> and <code class="language-plaintext highlighter-rouge">:::lang:end</code></li>
-  <li>✅ <strong>Language detection</strong> - Automatically detects bilingual content</li>
-  <li>✅ <strong>Proper HTML output</strong> - Generates semantic HTML with language classes</li>
-</ul>
+  <h3 id="key-features">Key Features:</h3>
+  <ul>
+    <li>✅ <strong>Character-by-character processing</strong> - No regex patterns</li>
+    <li>✅ <strong>Clean syntax</strong> - Just `- ✅ <strong>Language detection</strong> - Automatically detects bilingual content</li>
+    <li>✅ <strong>Proper HTML output</strong> - Generates semantic HTML with language classes</li>
+  </ul>
 
-<h3 id="how-it-works">How It Works:</h3>
+  <h3 id="how-it-works">How It Works:</h3>
 
-<ol>
-  <li><strong>Streaming Algorithm</strong>: The parser reads each character sequentially</li>
-  <li><strong>Marker Detection</strong>: When it encounters <code class="language-plaintext highlighter-rouge">:</code>, it looks ahead for <code class="language-plaintext highlighter-rouge">:::lang:</code></li>
-  <li><strong>Language Sections</strong>: Creates proper HTML divs with language attributes</li>
-  <li><strong>Content Preservation</strong>: All content between markers is preserved exactly</li>
-</ol>
+  <ol>
+    <li><strong>Streaming Algorithm</strong>: The parser reads each character sequentially</li>
+    <li><strong>Marker Detection</strong>: When it encounters <code class="language-plaintext highlighter-rouge">:</code>, it looks ahead for `3. <strong>Language Sections</strong>: Creates proper HTML divs with language attributes</li>
+    <li><strong>Content Preservation</strong>: All content between markers is preserved exactly</li>
+  </ol>
 
-<h3 id="preprocessing-script">Preprocessing Script</h3>
+  <h3 id="preprocessing-script">Preprocessing Script</h3>
 
-<p>Use the preprocessing script to convert user-friendly syntax:</p>
+  <p>Use the preprocessing script to convert user-friendly syntax:</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Convert user-friendly syntax to Jekyll-compatible HTML</span>
+  <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Convert user-friendly syntax to Jekyll-compatible HTML</span>
 ruby scripts/bilingual_preprocessor.rb input.md output.md
-</code></pre></div></div>
+</code></pre></div>  </div>
 
-<p>The script will:</p>
-<ul>
-  <li>Parse your markdown character by character</li>
-  <li>Convert <code class="language-plaintext highlighter-rouge">:::lang:en</code> markers to <code class="language-plaintext highlighter-rouge">&lt;div class="lang-content lang-en"&gt;</code></li>
-  <li>Wrap everything in a bilingual container</li>
-  <li>Preserve all your content exactly as written</li>
-</ul>
+  <p>The script will:</p>
+  <ul>
+    <li>Parse your markdown character by character</li>
+    <li>Convert `- Wrap everything in a bilingual container</li>
+    <li>Preserve all your content exactly as written</li>
+  </ul>
 
-<h3 id="example-workflow">Example Workflow:</h3>
+  <h3 id="example-workflow">Example Workflow:</h3>
 
-<ol>
-  <li><strong>Write</strong> your post with clean syntax:
-    <div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code>:::lang:en
-English content here
-:::lang:end
-</code></pre></div>    </div>
-  </li>
-  <li><strong>Process</strong> with the streaming parser:
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ruby scripts/bilingual_preprocessor.rb my_post.md
-</code></pre></div>    </div>
-  </li>
-  <li><strong>Result</strong> is Jekyll-compatible HTML:
-    <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"lang-content lang-en"</span> <span class="na">data-lang=</span><span class="s">"en"</span> <span class="na">markdown=</span><span class="s">"1"</span><span class="nt">&gt;</span>
+  <ol>
+    <li><strong>Write</strong> your post with clean syntax:
+```markdown</li>
+  </ol>
+
+  <div class="lang-content lang-en" data-lang="en">
+
+    <p>English content here</p>
+
+  </div>
+  <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+2. **Process** with the streaming parser:
+   ```bash
+   ruby scripts/bilingual_preprocessor.rb my_post.md
+</code></pre></div>  </div>
+
+  <ol>
+    <li><strong>Result</strong> is Jekyll-compatible HTML:
+      <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"lang-content lang-en"</span> <span class="na">data-lang=</span><span class="s">"en"</span> <span class="na">markdown=</span><span class="s">"1"</span><span class="nt">&gt;</span>
 English content here
 <span class="nt">&lt;/div&gt;</span>
-</code></pre></div>    </div>
-  </li>
-</ol>
+</code></pre></div>      </div>
+    </li>
+  </ol>
 
-<h2 id="benefits-of-this-approach">Benefits of This Approach</h2>
+  <h2 id="benefits-of-this-approach">Benefits of This Approach</h2>
 
-<h3 id="for-authors">For Authors:</h3>
-<ul>
-  <li><strong>Simple syntax</strong> - No HTML knowledge required</li>
-  <li><strong>Natural writing</strong> - Just add language markers</li>
-  <li><strong>Version control friendly</strong> - Clean diffs</li>
-  <li><strong>No learning curve</strong> - Intuitive marker system</li>
-</ul>
+  <h3 id="for-authors">For Authors:</h3>
+  <ul>
+    <li><strong>Simple syntax</strong> - No HTML knowledge required</li>
+    <li><strong>Natural writing</strong> - Just add language markers</li>
+    <li><strong>Version control friendly</strong> - Clean diffs</li>
+    <li><strong>No learning curve</strong> - Intuitive marker system</li>
+  </ul>
 
-<h3 id="for-developers">For Developers:</h3>
-<ul>
-  <li><strong>No regex</strong> - Streaming character-by-character parsing</li>
-  <li><strong>Reliable</strong> - Handles edge cases gracefully</li>
-  <li><strong>Extensible</strong> - Easy to add new language markers</li>
-  <li><strong>Fast</strong> - Efficient single-pass parsing</li>
-</ul>
+  <h3 id="for-developers">For Developers:</h3>
+  <ul>
+    <li><strong>No regex</strong> - Streaming character-by-character parsing</li>
+    <li><strong>Reliable</strong> - Handles edge cases gracefully</li>
+    <li><strong>Extensible</strong> - Easy to add new language markers</li>
+    <li><strong>Fast</strong> - Efficient single-pass parsing</li>
+  </ul>
 
-<h3 id="for-readers">For Readers:</h3>
-<ul>
-  <li><strong>Seamless switching</strong> - JavaScript-powered language toggle</li>
-  <li><strong>Persistent preference</strong> - Language choice saved in localStorage</li>
-  <li><strong>Smooth transitions</strong> - No page reloads</li>
-  <li><strong>Semantic HTML</strong> - Proper language attributes for accessibility</li>
-</ul>
+  <h3 id="for-readers">For Readers:</h3>
+  <ul>
+    <li><strong>Seamless switching</strong> - JavaScript-powered language toggle</li>
+    <li><strong>Persistent preference</strong> - Language choice saved in localStorage</li>
+    <li><strong>Smooth transitions</strong> - No page reloads</li>
+    <li><strong>Semantic HTML</strong> - Proper language attributes for accessibility</li>
+  </ul>
 
-<h2 id="current-implementation-status">Current Implementation Status</h2>
+  <h2 id="current-implementation-status">Current Implementation Status</h2>
 
-<p>The streaming parser is fully implemented and working. The current setup uses:</p>
+  <p>The streaming parser is fully implemented and working. The current setup uses:</p>
 
-<ul>
-  <li><strong>Working syntax</strong>: HTML divs with <code class="language-plaintext highlighter-rouge">markdown="1"</code> (currently active)</li>
-  <li><strong>Preprocessing script</strong>: Converts user-friendly syntax to working format</li>
-  <li><strong>Character-by-character parsing</strong>: No regex, pure streaming algorithm</li>
-</ul>
+  <ul>
+    <li><strong>Working syntax</strong>: HTML divs with <code class="language-plaintext highlighter-rouge">markdown="1"</code> (currently active)</li>
+    <li><strong>Preprocessing script</strong>: Converts user-friendly syntax to working format</li>
+    <li><strong>Character-by-character parsing</strong>: No regex, pure streaming algorithm</li>
+  </ul>
 
-<p>To use the user-friendly syntax in your workflow:</p>
-<ol>
-  <li>Write posts with <code class="language-plaintext highlighter-rouge">:::lang:en</code> syntax</li>
-  <li>Run the preprocessing script</li>
-  <li>Commit the processed version to Jekyll</li>
-</ol>
+  <p>To use the user-friendly syntax in your workflow:</p>
+  <ol>
+    <li>Write posts with `2. Run the preprocessing script</li>
+    <li>Commit the processed version to Jekyll</li>
+  </ol>
 
-<p>This gives you the best of both worlds: clean authoring experience and reliable Jekyll processing.</p>
+  <p>This gives you the best of both worlds: clean authoring experience and reliable Jekyll processing.</p>
 
-<h2 id="features">Features</h2>
+  <h2 id="features">Features</h2>
 
-<ul>
-  <li><strong>Language Toggle</strong>: Readers can switch between English and Chinese versions with a simple button</li>
-  <li><strong>Seamless Switching</strong>: No page reload required, smooth transitions</li>
-  <li><strong>Language Preference</strong>: User’s language choice is saved in localStorage</li>
-  <li><strong>Mixed Content</strong>: Support for content that appears in both languages</li>
-  <li><strong>Native Markdown</strong>: Uses Markdown blockquotes with Kramdown attributes - no HTML knowledge required!</li>
-  <li><strong>Responsive Design</strong>: Works on all device sizes</li>
-</ul>
+  <ul>
+    <li><strong>Language Toggle</strong>: Readers can switch between English and Chinese versions with a simple button</li>
+    <li><strong>Seamless Switching</strong>: No page reload required, smooth transitions</li>
+    <li><strong>Language Preference</strong>: User’s language choice is saved in localStorage</li>
+    <li><strong>Mixed Content</strong>: Support for content that appears in both languages</li>
+    <li><strong>Native Markdown</strong>: Uses Markdown blockquotes with Kramdown attributes - no HTML knowledge required!</li>
+    <li><strong>Responsive Design</strong>: Works on all device sizes</li>
+  </ul>
 
-<h2 id="how-to-create-a-bilingual-post">How to Create a Bilingual Post</h2>
+  <h2 id="how-to-create-a-bilingual-post">How to Create a Bilingual Post</h2>
 
-<h3 id="1-set-the-bilingual-flag">1. Set the Bilingual Flag</h3>
+  <h3 id="set-the-bilingual-flag">1. Set the Bilingual Flag</h3>
 
-<p>Add <code class="language-plaintext highlighter-rouge">bilingual: true</code> to your post’s front matter:</p>
+  <p>Add <code class="language-plaintext highlighter-rouge">bilingual: true</code> to your post’s front matter:</p>
 
-<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">---</span>
+  <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">---</span>
 <span class="na">layout</span><span class="pi">:</span> <span class="s">post</span>
 <span class="na">title</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Your</span><span class="nv"> </span><span class="s">Title</span><span class="nv"> </span><span class="s">-</span><span class="nv"> </span><span class="s">你的标题"</span>
 <span class="na">date</span><span class="pi">:</span> <span class="s">2024-01-01</span>
 <span class="na">slug</span><span class="pi">:</span> <span class="s">your-post-slug</span>
 <span class="na">bilingual</span><span class="pi">:</span> <span class="no">true</span>
 <span class="nn">---</span>
-</code></pre></div></div>
+</code></pre></div>  </div>
 
-<h3 id="2-structure-your-content-using-native-markdown">2. Structure Your Content Using Native Markdown</h3>
+  <h3 id="structure-your-content-using-native-markdown">2. Structure Your Content Using Native Markdown</h3>
 
-<p>Use Markdown blockquotes with Kramdown attributes for language-specific content:</p>
+  <p>Use Markdown blockquotes with Kramdown attributes for language-specific content:</p>
 
-<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"bilingual-post"</span> <span class="na">markdown=</span><span class="s">"1"</span><span class="nt">&gt;</span>
+  <div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"bilingual-post"</span> <span class="na">markdown=</span><span class="s">"1"</span><span class="nt">&gt;</span>
 
 <span class="c">&lt;!-- Common content that appears in both languages --&gt;</span>
 Welcome to this bilingual blog!
@@ -226,21 +237,21 @@ Welcome to this bilingual blog!
 This appears in both languages.
 
 <span class="nt">&lt;/div&gt;</span>
-</code></pre></div></div>
+</code></pre></div>  </div>
 
-<h3 id="3-key-syntax-elements">3. Key Syntax Elements</h3>
+  <h3 id="key-syntax-elements">3. Key Syntax Elements</h3>
 
-<ul>
-  <li><strong>Blockquotes</strong>: Use <code class="language-plaintext highlighter-rouge">&gt;</code> to create language-specific content blocks</li>
-  <li><strong>Kramdown Attributes</strong>: Use <code class="language-plaintext highlighter-rouge">{: .class-name}</code> to add CSS classes and attributes</li>
-  <li><strong>Language Classes</strong>: <code class="language-plaintext highlighter-rouge">.lang-content .lang-en</code> for English, <code class="language-plaintext highlighter-rouge">.lang-content .lang-zh</code> for Chinese</li>
-  <li><strong>Data Attributes</strong>: <code class="language-plaintext highlighter-rouge">data-lang="en"</code> and <code class="language-plaintext highlighter-rouge">data-lang="zh"</code> for JavaScript functionality</li>
-  <li><strong>Container</strong>: Wrap everything in <code class="language-plaintext highlighter-rouge">&lt;div class="bilingual-post" markdown="1"&gt;</code></li>
-</ul>
+  <ul>
+    <li><strong>Blockquotes</strong>: Use <code class="language-plaintext highlighter-rouge">&gt;</code> to create language-specific content blocks</li>
+    <li><strong>Kramdown Attributes</strong>: Use <code class="language-plaintext highlighter-rouge">{: .class-name}</code> to add CSS classes and attributes</li>
+    <li><strong>Language Classes</strong>: <code class="language-plaintext highlighter-rouge">.lang-content .lang-en</code> for English, <code class="language-plaintext highlighter-rouge">.lang-content .lang-zh</code> for Chinese</li>
+    <li><strong>Data Attributes</strong>: <code class="language-plaintext highlighter-rouge">data-lang="en"</code> and <code class="language-plaintext highlighter-rouge">data-lang="zh"</code> for JavaScript functionality</li>
+    <li><strong>Container</strong>: Wrap everything in <code class="language-plaintext highlighter-rouge">&lt;div class="bilingual-post" markdown="1"&gt;</code></li>
+  </ul>
 
-<h2 id="example-post-structure">Example Post Structure</h2>
+  <h2 id="example-post-structure">Example Post Structure</h2>
 
-<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">---</span>
+  <div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">---</span>
 <span class="na">layout</span><span class="pi">:</span> <span class="s">post</span>
 <span class="na">title</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Hello</span><span class="nv"> </span><span class="s">World</span><span class="nv"> </span><span class="s">-</span><span class="nv"> </span><span class="s">你好，世界"</span>
 <span class="na">date</span><span class="pi">:</span> <span class="s">2024-01-01</span>
@@ -267,53 +278,53 @@ This introduction appears in both languages.
 This conclusion appears in both languages.
 
 <span class="nt">&lt;/div&gt;</span>
-</code></pre></div></div>
+</code></pre></div>  </div>
 
-<h2 id="why-this-approach">Why This Approach?</h2>
+  <h2 id="why-this-approach">Why This Approach?</h2>
 
-<h3 id="-native-markdown-benefits">✅ <strong>Native Markdown Benefits</strong></h3>
-<ul>
-  <li><strong>No HTML required</strong>: Uses standard Markdown blockquotes</li>
-  <li><strong>Kramdown compatible</strong>: Leverages Jekyll’s built-in Kramdown processor</li>
-  <li><strong>Semantic</strong>: Blockquotes naturally represent “quoted” or “special” content</li>
-  <li><strong>Readable</strong>: Easy to read and write in plain text</li>
-  <li><strong>Version control friendly</strong>: Clean diffs in git</li>
-</ul>
+  <h3 id="native-markdown-benefits">✅ <strong>Native Markdown Benefits</strong></h3>
+  <ul>
+    <li><strong>No HTML required</strong>: Uses standard Markdown blockquotes</li>
+    <li><strong>Kramdown compatible</strong>: Leverages Jekyll’s built-in Kramdown processor</li>
+    <li><strong>Semantic</strong>: Blockquotes naturally represent “quoted” or “special” content</li>
+    <li><strong>Readable</strong>: Easy to read and write in plain text</li>
+    <li><strong>Version control friendly</strong>: Clean diffs in git</li>
+  </ul>
 
-<h3 id="-compared-to-alternatives">✅ <strong>Compared to Alternatives</strong></h3>
-<ul>
-  <li><strong>Better than HTML divs</strong>: More Markdown-native</li>
-  <li><strong>Better than custom syntax</strong>: No custom plugins required</li>
-  <li><strong>Better than fenced blocks</strong>: Doesn’t conflict with code syntax</li>
-  <li><strong>Better than complex processors</strong>: Uses Jekyll’s built-in features</li>
-</ul>
+  <h3 id="compared-to-alternatives">✅ <strong>Compared to Alternatives</strong></h3>
+  <ul>
+    <li><strong>Better than HTML divs</strong>: More Markdown-native</li>
+    <li><strong>Better than custom syntax</strong>: No custom plugins required</li>
+    <li><strong>Better than fenced blocks</strong>: Doesn’t conflict with code syntax</li>
+    <li><strong>Better than complex processors</strong>: Uses Jekyll’s built-in features</li>
+  </ul>
 
-<h2 id="styling">Styling</h2>
+  <h2 id="styling">Styling</h2>
 
-<p>The language toggle and content sections are styled to match your existing theme. The toggle button appears below the post title and date, and language-specific content fades in/out smoothly when switching.</p>
+  <p>The language toggle and content sections are styled to match your existing theme. The toggle button appears below the post title and date, and language-specific content fades in/out smoothly when switching.</p>
 
-<h2 id="browser-support">Browser Support</h2>
+  <h2 id="browser-support">Browser Support</h2>
 
-<p>The bilingual feature works in all modern browsers and degrades gracefully. If JavaScript is disabled, all content will be visible simultaneously.</p>
+  <p>The bilingual feature works in all modern browsers and degrades gracefully. If JavaScript is disabled, all content will be visible simultaneously.</p>
 
-<h2 id="tips-for-writing-bilingual-posts">Tips for Writing Bilingual Posts</h2>
+  <h2 id="tips-for-writing-bilingual-posts">Tips for Writing Bilingual Posts</h2>
 
-<ol>
-  <li><strong>Plan your structure</strong>: Decide which sections should be language-specific and which should be common</li>
-  <li><strong>Keep titles bilingual</strong>: Use format like “English Title - 中文标题”</li>
-  <li><strong>Test both languages</strong>: Always preview your post in both languages before publishing</li>
-  <li><strong>Use blockquote headers</strong>: Start each language block with <code class="language-plaintext highlighter-rouge">&gt; **Language Name**</code></li>
-  <li><strong>Consistent attributes</strong>: Always use the correct Kramdown attributes for each language</li>
-  <li><strong>Wrap in container</strong>: Don’t forget the <code class="language-plaintext highlighter-rouge">bilingual-post</code> wrapper div</li>
-</ol>
+  <ol>
+    <li><strong>Plan your structure</strong>: Decide which sections should be language-specific and which should be common</li>
+    <li><strong>Keep titles bilingual</strong>: Use format like “English Title - 中文标题”</li>
+    <li><strong>Test both languages</strong>: Always preview your post in both languages before publishing</li>
+    <li><strong>Use blockquote headers</strong>: Start each language block with <code class="language-plaintext highlighter-rouge">&gt; **Language Name**</code></li>
+    <li><strong>Consistent attributes</strong>: Always use the correct Kramdown attributes for each language</li>
+    <li><strong>Wrap in container</strong>: Don’t forget the <code class="language-plaintext highlighter-rouge">bilingual-post</code> wrapper div</li>
+  </ol>
 
-<h2 id="advanced-usage">Advanced Usage</h2>
+  <h2 id="advanced-usage">Advanced Usage</h2>
 
-<h3 id="multiple-language-sections">Multiple Language Sections</h3>
+  <h3 id="multiple-language-sections">Multiple Language Sections</h3>
 
-<p>You can have multiple language-specific sections in one post:</p>
+  <p>You can have multiple language-specific sections in one post:</p>
 
-<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gt">&gt; **English - Introduction**</span>
+  <div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gt">&gt; **English - Introduction**</span>
 <span class="gt">&gt; This is the English introduction.</span>
 {: .lang-content .lang-en data-lang="en"}
 <span class="gt">
@@ -330,7 +341,9 @@ Common content here...
 &gt; **中文 - 结论**</span>
 <span class="gt">&gt; 这是中文结论。</span>
 {: .lang-content .lang-zh data-lang="zh"}
-</code></pre></div></div>
+</code></pre></div>  </div>
+
+</div>
 
 
     <footer>

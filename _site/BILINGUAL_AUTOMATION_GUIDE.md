@@ -1,11 +1,12 @@
+<div class="bilingual-post" markdown="1">
+
 # Automated Bilingual Content System
 
 This guide explains the automated bilingual content processing system using GitHub Actions and Jekyll for your blog.
 
 ## 🎯 The Solution: GitHub Actions Automation
 
-The system automatically converts user-friendly `:::lang:en` syntax to Jekyll-compatible HTML divs using GitHub Actions, solving the GitHub Pages plugin restriction problem.
-
+The system automatically converts user-friendly `
 ## ✨ How It Works
 
 ### 1. **Write Content Naturally**
@@ -18,17 +19,25 @@ bilingual: true
 
 Introduction text appears in both languages.
 
-:::lang:en
+
+<div class="lang-content lang-en" data-lang="en" markdown="1">
+
 English content here.
 - Easy to write
 - Clean syntax
-:::lang:end
 
-:::lang:zh
+
+</div>
+
+
+<div class="lang-content lang-zh" data-lang="zh" markdown="1">
+
 中文内容在这里。
 - 易于编写
 - 清洁语法
-:::lang:end
+
+
+</div>
 
 Conclusion appears in both languages.
 ```
@@ -36,8 +45,7 @@ Conclusion appears in both languages.
 ### 2. **GitHub Actions Processes Automatically**
 When you push to GitHub, the workflow:
 - 🔍 Finds all markdown files with `bilingual: true`
-- 🔄 Converts `:::lang:en` syntax to HTML divs
-- 📝 Commits the processed files back to the repository
+- 🔄 Converts `- 📝 Commits the processed files back to the repository
 - 🚀 Triggers GitHub Pages to rebuild with proper HTML
 
 ### 3. **Result: Perfect HTML Structure**
@@ -66,8 +74,7 @@ The GitHub Actions workflow is already set up in `.github/workflows/process-bili
 
 ### Step 2: Create Bilingual Content
 1. Add `bilingual: true` to your post's front matter
-2. Use the `:::lang:en` / `:::lang:zh` / `:::lang:end` syntax
-3. Push to GitHub
+2. Use the `3. Push to GitHub
 4. The workflow automatically processes your content!
 
 ### Step 3: Language Switching
@@ -86,26 +93,33 @@ bilingual: true  # Required for processing
 
 Shared content (appears in both languages)
 
-:::lang:en
-English-only content
-:::lang:end
 
-:::lang:zh
+<div class="lang-content lang-en" data-lang="en" markdown="1">
+
+English-only content
+
+
+</div>
+
+
+<div class="lang-content lang-zh" data-lang="zh" markdown="1">
+
 Chinese-only content
-:::lang:end
+
+
+</div>
 
 More shared content
 ```
 
 ### Supported Languages
-- `:::lang:en` - English content
-- `:::lang:zh` - Chinese content
-- `:::lang:end` - End language section
-
+- `- `- `
 ### Nesting and Markdown
 All standard markdown works inside language blocks:
 ```markdown
-:::lang:en
+
+<div class="lang-content lang-en" data-lang="en" markdown="1">
+
 ## English Heading
 
 - List items
@@ -115,7 +129,9 @@ All standard markdown works inside language blocks:
 > Blockquotes work too!
 
 ```code blocks```
-:::lang:end
+
+
+</div>
 ```
 
 ## 🔧 Technical Details
@@ -124,8 +140,7 @@ All standard markdown works inside language blocks:
 - **Trigger**: Push to main branch with markdown file changes
 - **Process**: Finds bilingual files, processes syntax, commits results
 - **Safety**: Creates backups, restores on failure
-- **Performance**: Only processes files with `:::lang:` syntax
-
+- **Performance**: Only processes files with `
 ### File Processing
 - **In-place editing**: Modifies original files directly
 - **Preserves formatting**: Maintains markdown structure
@@ -158,8 +173,7 @@ To support additional languages:
 
 1. **Update the preprocessor** (`scripts/bilingual_preprocessor.rb`):
 ```ruby
-elsif marker == ':::lang:fr'
-  start_language_section('fr')
+elsif marker == '  start_language_section('fr')
 ```
 
 2. **Update CSS** (`assets/css/custom.css`):
@@ -191,10 +205,8 @@ Edit `.github/workflows/process-bilingual.yml` to:
 - Verify the workflow file is in `.github/workflows/`
 
 **Content not processing?**
-- Confirm `:::lang:` syntax is correct
-- Check for typos in language codes
-- Ensure `:::lang:end` markers are present
-
+- Confirm `- Check for typos in language codes
+- Ensure `
 **Language switching not working?**
 - Verify HTML structure was generated correctly
 - Check browser console for JavaScript errors
@@ -231,3 +243,5 @@ Enable debug output by adding `debug: true` to your post's front matter. This wi
 4. **Monitor workflow**: Check GitHub Actions for processing logs
 
 The automated bilingual system makes it effortless to create multilingual content while maintaining full compatibility with GitHub Pages! 🎉 
+
+</div>

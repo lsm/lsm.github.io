@@ -1,3 +1,5 @@
+<div class="bilingual-post" markdown="1">
+
 ---
 layout: post
 title: "Automated Bilingual Test - 自动双语测试"
@@ -8,7 +10,9 @@ bilingual: true
 
 This post demonstrates the automated bilingual preprocessing with GitHub Actions! Users can now write content using the clean language syntax and GitHub Actions will automatically convert it to proper HTML.
 
-:::lang:en
+
+<div class="lang-content lang-en" data-lang="en" markdown="1">
+
 
 ## English Content
 
@@ -29,9 +33,13 @@ The streaming parser processes this content character by character and converts 
 4. Commits the converted HTML back to the repository
 5. GitHub Pages builds the site with proper bilingual structure
 
-:::lang:end
 
-:::lang:zh
+
+</div>
+
+
+<div class="lang-content lang-zh" data-lang="zh" markdown="1">
+
 
 ## 中文内容
 
@@ -52,10 +60,14 @@ The streaming parser processes this content character by character and converts 
 4. 将转换后的 HTML 提交回存储库
 5. GitHub Pages 使用正确的双语结构构建站点
 
-:::lang:end
+
+
+</div>
 
 ---
 
 This conclusion appears in both languages since it's outside the language blocks. The GitHub Actions workflow automatically wraps language-specific content in the appropriate HTML divs and adds the bilingual container.
 
 **Perfect for content creators!** 🎉 No more manual HTML conversion needed!
+
+</div>

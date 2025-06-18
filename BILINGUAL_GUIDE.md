@@ -1,11 +1,12 @@
+<div class="bilingual-post" markdown="1">
+
 # Bilingual Blog Guide
 
 This guide explains how to create bilingual blog posts with a clean, user-friendly syntax.
 
 ## User-Friendly Syntax
 
-You can write bilingual content using the clean `:::lang:` syntax:
-
+You can write bilingual content using the clean `
 ```markdown
 ---
 layout: post
@@ -16,15 +17,23 @@ bilingual: true
 
 This content appears in both languages.
 
-:::lang:en
+
+<div class="lang-content lang-en" data-lang="en" markdown="1">
+
 # English Section
 This content only appears in English.
-:::lang:end
 
-:::lang:zh
+
+</div>
+
+
+<div class="lang-content lang-zh" data-lang="zh" markdown="1">
+
 # 中文部分
 这个内容只在中文中显示。
-:::lang:end
+
+
+</div>
 
 This conclusion appears in both languages.
 ```
@@ -35,15 +44,13 @@ The bilingual system uses a **streaming parser** that processes content characte
 
 ### Key Features:
 - ✅ **Character-by-character processing** - No regex patterns
-- ✅ **Clean syntax** - Just `:::lang:en` and `:::lang:end`
-- ✅ **Language detection** - Automatically detects bilingual content
+- ✅ **Clean syntax** - Just `- ✅ **Language detection** - Automatically detects bilingual content
 - ✅ **Proper HTML output** - Generates semantic HTML with language classes
 
 ### How It Works:
 
 1. **Streaming Algorithm**: The parser reads each character sequentially
-2. **Marker Detection**: When it encounters `:`, it looks ahead for `:::lang:`
-3. **Language Sections**: Creates proper HTML divs with language attributes
+2. **Marker Detection**: When it encounters `:`, it looks ahead for `3. **Language Sections**: Creates proper HTML divs with language attributes
 4. **Content Preservation**: All content between markers is preserved exactly
 
 ### Preprocessing Script
@@ -57,17 +64,20 @@ ruby scripts/bilingual_preprocessor.rb input.md output.md
 
 The script will:
 - Parse your markdown character by character
-- Convert `:::lang:en` markers to `<div class="lang-content lang-en">`
-- Wrap everything in a bilingual container
+- Convert `- Wrap everything in a bilingual container
 - Preserve all your content exactly as written
 
 ### Example Workflow:
 
 1. **Write** your post with clean syntax:
    ```markdown
-   :::lang:en
+   
+<div class="lang-content lang-en" data-lang="en" markdown="1">
+
    English content here
-   :::lang:end
+   
+
+</div>
    ```
 
 2. **Process** with the streaming parser:
@@ -111,8 +121,7 @@ The streaming parser is fully implemented and working. The current setup uses:
 - **Character-by-character parsing**: No regex, pure streaming algorithm
 
 To use the user-friendly syntax in your workflow:
-1. Write posts with `:::lang:en` syntax
-2. Run the preprocessing script
+1. Write posts with `2. Run the preprocessing script
 3. Commit the processed version to Jekyll
 
 This gives you the best of both worlds: clean authoring experience and reliable Jekyll processing.
@@ -283,3 +292,5 @@ Common content here...
 > 这是中文结论。
 {: .lang-content .lang-zh data-lang="zh"}
 ``` 
+
+</div>
