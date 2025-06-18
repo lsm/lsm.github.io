@@ -256,4 +256,67 @@ a:hover {
     body > footer {
         padding: 0.5rem !important;
     }
+}
+
+/* Language Toggle Styles */
+.language-toggle {
+    margin-top: 1rem !important;
+    text-align: center !important;
+}
+
+.lang-toggle-btn {
+    background: none !important;
+    border: 1px solid var(--border-color) !important;
+    border-radius: 20px !important;
+    padding: 0.5rem 1rem !important;
+    cursor: pointer !important;
+    font-size: 0.9rem !important;
+    color: var(--text-color) !important;
+    transition: all 0.3s ease !important;
+}
+
+.lang-toggle-btn:hover {
+    border-color: var(--link-color) !important;
+    background: var(--border-color) !important;
+}
+
+.lang-option {
+    padding: 0 0.3rem !important;
+    transition: all 0.3s ease !important;
+}
+
+.lang-option.active {
+    font-weight: bold !important;
+    color: var(--link-color) !important;
+}
+
+.lang-separator {
+    color: var(--secondary-text) !important;
+    margin: 0 0.2rem !important;
+}
+
+/* Bilingual Content Styles */
+.bilingual-post {
+    position: relative !important;
+}
+
+.lang-content {
+    transition: opacity 0.3s ease !important;
+}
+
+.lang-content[style*="display: none"] {
+    opacity: 0 !important;
+}
+
+.lang-content[style*="display: block"] {
+    opacity: 1 !important;
+}
+
+/* Language-specific typography */
+.lang-zh {
+    font-family: var(--font-serif) !important;
+}
+
+.lang-en {
+    font-family: var(--font-sans) !important;
 } 

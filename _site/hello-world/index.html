@@ -24,21 +24,69 @@
         <time datetime="2024-01-01T00:00:00-05:00">
             January 01, 2024
         </time>
+        
+        <!-- Language toggle button (only show if post is bilingual) -->
+        
+        <div class="language-toggle">
+            <button id="lang-toggle" class="lang-toggle-btn">
+                <span class="lang-option" data-lang="en">EN</span>
+                <span class="lang-separator">|</span>
+                <span class="lang-option" data-lang="zh">中</span>
+            </button>
+        </div>
+        
     </header>
 
     <div class="post-content">
-        <p>Welcome to this bilingual blog! 欢迎来到这个双语博客！</p>
+        <div class="bilingual-post">
 
-<p>This is a sample post demonstrating the bilingual capabilities of our blog.
-这是一篇展示博客双语功能的示例文章。</p>
+  <p>Welcome to this bilingual blog! This post demonstrates the streaming parser concept. Let me show you how the clean syntax works:</p>
 
-<h2 id="english-section">English Section</h2>
+  <div class="lang-content lang-en" data-lang="en">
 
-<p>This section contains English content.</p>
+    <h2 id="english-section">English Section</h2>
 
-<h2 id="中文部分">中文部分</h2>
+    <p>This is the English version of the content. You can write your thoughts, ideas, and stories in English here.</p>
 
-<p>这部分包含中文内容。</p>
+    <h3 id="features-of-this-bilingual-blog">Features of this bilingual blog:</h3>
+    <ul>
+      <li>Toggle between languages with a simple button</li>
+      <li>Seamless switching without page reload</li>
+      <li>Language preference is saved locally</li>
+      <li>Mixed content support (some sections can be common to both languages)</li>
+      <li><strong>Streaming parser</strong> - processes content character by character!</li>
+    </ul>
+
+    <p>This section will only be visible when English is selected.</p>
+
+  </div>
+
+  <div class="lang-content lang-zh" data-lang="zh">
+
+    <h2 id="section">中文部分</h2>
+
+    <p>这是内容的中文版本。您可以在这里用中文写下您的想法、观点和故事。</p>
+
+    <h3 id="section-1">这个双语博客的特点：</h3>
+    <ul>
+      <li>通过简单的按钮在语言之间切换</li>
+      <li>无需重新加载页面即可无缝切换</li>
+      <li>语言偏好设置会在本地保存</li>
+      <li>支持混合内容（某些部分可以是两种语言共同的）</li>
+      <li><strong>流式解析器</strong> - 逐字符处理内容！</li>
+    </ul>
+
+    <p>这个部分只有在选择中文时才会显示。</p>
+
+  </div>
+
+  <hr />
+
+  <p>This conclusion section appears in both languages since it’s not wrapped in language divs.</p>
+
+  <p><strong>For authors who want the clean <code class="language-plaintext highlighter-rouge">:::lang:en</code> syntax:</strong> You can write your posts using that syntax, and a simple preprocessing script can convert it to this working format before Jekyll processes it.</p>
+
+</div>
 
     </div>
 
@@ -61,14 +109,27 @@
                 <li>Submit a pull request</li>
             </ol>
             <p>
-                <a href="https://github.com/lsm/lsm.github.io/blob/main/.github/COMMENT_TEMPLATE.md" target="_blank">
-                    📝 View comment template and guidelines
+                📝 <a href="https://github.com/lsm/lsm.github.io/blob/main/.github/COMMENT_TEMPLATE.md" target="_blank">
+                    View comment template and guidelines
                 </a>
             </p>
-            <p class="zh">
-                <strong>如何添加评论：</strong><br>
-                点击上面的链接编辑评论文件，使用YAML格式添加您的评论，然后提交拉取请求。
-            </p>
+            <div class="zh">
+                <p><strong>如何添加评论：</strong></p>
+                <ol>
+                    <li>
+                        <a href="https://github.com/lsm/lsm.github.io/edit/main/_data/comments/2024-01-01-hello-world.yml" target="_blank">
+                            直接在GitHub上编辑评论文件
+                        </a>
+                    </li>
+                    <li>使用YAML格式添加您的评论</li>
+                    <li>提交拉取请求</li>
+                </ol>
+                <p>
+                    📝 <a href="https://github.com/lsm/lsm.github.io/blob/main/.github/COMMENT_TEMPLATE.md" target="_blank">
+                        查看评论模板和指南
+                    </a>
+                </p>
+            </div>
         </div>
     </section>
 </article>

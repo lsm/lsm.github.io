@@ -3,17 +3,51 @@ layout: post
 title: "Hello World - 你好，世界"
 date: 2024-01-01
 slug: hello-world
+bilingual: true
 ---
 
-Welcome to this bilingual blog! 欢迎来到这个双语博客！
+<div class="bilingual-post" markdown="1">
 
-This is a sample post demonstrating the bilingual capabilities of our blog.
-这是一篇展示博客双语功能的示例文章。
+Welcome to this bilingual blog! This post demonstrates the streaming parser concept. Let me show you how the clean syntax works:
+
+<div class="lang-content lang-en" data-lang="en" markdown="1">
 
 ## English Section
 
-This section contains English content.
+This is the English version of the content. You can write your thoughts, ideas, and stories in English here.
+
+### Features of this bilingual blog:
+- Toggle between languages with a simple button
+- Seamless switching without page reload
+- Language preference is saved locally
+- Mixed content support (some sections can be common to both languages)
+- **Streaming parser** - processes content character by character!
+
+This section will only be visible when English is selected.
+
+</div>
+
+<div class="lang-content lang-zh" data-lang="zh" markdown="1">
 
 ## 中文部分
 
-这部分包含中文内容。
+这是内容的中文版本。您可以在这里用中文写下您的想法、观点和故事。
+
+### 这个双语博客的特点：
+- 通过简单的按钮在语言之间切换
+- 无需重新加载页面即可无缝切换
+- 语言偏好设置会在本地保存
+- 支持混合内容（某些部分可以是两种语言共同的）
+- **流式解析器** - 逐字符处理内容！
+
+这个部分只有在选择中文时才会显示。
+
+</div>
+
+---
+
+This conclusion section appears in both languages since it's not wrapped in language divs.
+
+**For authors who want the clean `:::lang:en` syntax:** You can write your posts using that syntax, and a simple preprocessing script can convert it to this working format before Jekyll processes it.
+
+</div>

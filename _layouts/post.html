@@ -7,6 +7,17 @@ layout: default
         <time datetime="{{ page.date | date_to_xmlschema }}">
             {{ page.date | date: "%B %d, %Y" }}
         </time>
+        
+        <!-- Language toggle button (only show if post is bilingual) -->
+        {% if page.bilingual %}
+        <div class="language-toggle">
+            <button id="lang-toggle" class="lang-toggle-btn">
+                <span class="lang-option" data-lang="en">EN</span>
+                <span class="lang-separator">|</span>
+                <span class="lang-option" data-lang="zh">中</span>
+            </button>
+        </div>
+        {% endif %}
     </header>
 
     <div class="post-content">
@@ -32,14 +43,27 @@ layout: default
                 <li>Submit a pull request</li>
             </ol>
             <p>
-                <a href="https://github.com/{{ site.github.owner_name | default: 'lsm' }}/{{ site.github.repository_name | default: 'lsm.github.io' }}/blob/main/.github/COMMENT_TEMPLATE.md" target="_blank">
-                    📝 View comment template and guidelines
+                📝 <a href="https://github.com/{{ site.github.owner_name | default: 'lsm' }}/{{ site.github.repository_name | default: 'lsm.github.io' }}/blob/main/.github/COMMENT_TEMPLATE.md" target="_blank">
+                    View comment template and guidelines
                 </a>
             </p>
-            <p class="zh">
-                <strong>如何添加评论：</strong><br>
-                点击上面的链接编辑评论文件，使用YAML格式添加您的评论，然后提交拉取请求。
-            </p>
+            <div class="zh">
+                <p><strong>如何添加评论：</strong></p>
+                <ol>
+                    <li>
+                        <a href="https://github.com/{{ site.github.owner_name | default: 'lsm' }}/{{ site.github.repository_name | default: 'lsm.github.io' }}/edit/main/_data/comments/{{ comment_key }}.yml" target="_blank">
+                            直接在GitHub上编辑评论文件
+                        </a>
+                    </li>
+                    <li>使用YAML格式添加您的评论</li>
+                    <li>提交拉取请求</li>
+                </ol>
+                <p>
+                    📝 <a href="https://github.com/{{ site.github.owner_name | default: 'lsm' }}/{{ site.github.repository_name | default: 'lsm.github.io' }}/blob/main/.github/COMMENT_TEMPLATE.md" target="_blank">
+                        查看评论模板和指南
+                    </a>
+                </p>
+            </div>
         </div>
     </section>
 </article>
