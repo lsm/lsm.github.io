@@ -1,106 +1,96 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2025-06-18T02:42:04-04:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Marc Liu</title><subtitle>A place to write</subtitle><entry><title type="html">Workflow Test - 工作流测试</title><link href="http://localhost:4000/workflow-test/" rel="alternate" type="text/html" title="Workflow Test - 工作流测试" /><published>2024-01-03T00:00:00-05:00</published><updated>2024-01-03T00:00:00-05:00</updated><id>http://localhost:4000/workflow-test</id><content type="html" xml:base="http://localhost:4000/workflow-test/"><![CDATA[<p>This is a simple test post to verify the GitHub Actions workflow is running properly.</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2025-06-18T02:57:19-04:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Marc Liu</title><subtitle>A place to write</subtitle><entry><title type="html">Official Jekyll Workflow Test - 官方工作流测试</title><link href="http://localhost:4000/workflow-test/" rel="alternate" type="text/html" title="Official Jekyll Workflow Test - 官方工作流测试" /><published>2024-01-03T00:00:00-05:00</published><updated>2024-01-03T00:00:00-05:00</updated><id>http://localhost:4000/workflow-test</id><content type="html" xml:base="http://localhost:4000/workflow-test/"><![CDATA[<p>This test post uses the official Jekyll GitHub Actions workflow with integrated bilingual preprocessing.</p>
 
 <p>:::lang:en</p>
 
-<h2 id="english-test">English Test</h2>
+<h2 id="english-test---official-workflow">English Test - Official Workflow</h2>
 
-<p>This content should be automatically processed by GitHub Actions when pushed.</p>
+<p>This content should be automatically processed by the official Jekyll GitHub Actions workflow with our bilingual preprocessing step integrated.</p>
 
+<h3 id="key-changes">Key Changes:</h3>
 <ul>
-  <li>Test item 1</li>
-  <li>Test item 2</li>
-  <li>Test item 3</li>
+  <li><strong>Official Jekyll workflow</strong>: Using the standard GitHub Actions Jekyll deployment</li>
+  <li><strong>Integrated preprocessing</strong>: Our bilingual script runs before Jekyll build</li>
+  <li><strong>Proper deployment</strong>: Uses official GitHub Pages deployment actions</li>
+  <li><strong>Better compatibility</strong>: No more github-pages gem conflicts</li>
 </ul>
 
 <p>:::lang:end</p>
 
 <p>:::lang:zh</p>
 
-<h2 id="中文测试">中文测试</h2>
+<h2 id="中文测试---官方工作流">中文测试 - 官方工作流</h2>
 
-<p>这个内容应该在推送时由 GitHub Actions 自动处理。</p>
+<p>这个内容应该由集成了双语预处理步骤的官方 Jekyll GitHub Actions 工作流自动处理。</p>
 
+<h3 id="主要变化">主要变化：</h3>
 <ul>
-  <li>测试项目 1</li>
-  <li>测试项目 2</li>
-  <li>测试项目 3</li>
+  <li><strong>官方 Jekyll 工作流</strong>：使用标准的 GitHub Actions Jekyll 部署</li>
+  <li><strong>集成预处理</strong>：我们的双语脚本在 Jekyll 构建之前运行</li>
+  <li><strong>正确部署</strong>：使用官方 GitHub Pages 部署操作</li>
+  <li><strong>更好兼容性</strong>：不再有 github-pages gem 冲突</li>
 </ul>
 
 <p>:::lang:end</p>
 
-<p>If you see this content with <code class="language-plaintext highlighter-rouge">:::lang:</code> markers still visible, then the GitHub Actions workflow is not running properly.</p>]]></content><author><name></name></author><summary type="html"><![CDATA[This is a simple test post to verify the GitHub Actions workflow is running properly.]]></summary></entry><entry><title type="html">Automated Bilingual Test</title><link href="http://localhost:4000/automated-bilingual-test/" rel="alternate" type="text/html" title="Automated Bilingual Test" /><published>2024-01-02T00:00:00-05:00</published><updated>2024-01-02T00:00:00-05:00</updated><id>http://localhost:4000/automated-bilingual-test</id><content type="html" xml:base="http://localhost:4000/automated-bilingual-test/"><![CDATA[<div class="bilingual-post">
+<p>If this post displays correctly with language switching, then our official Jekyll workflow integration is working perfectly! 🎉</p>]]></content><author><name></name></author><summary type="html"><![CDATA[This test post uses the official Jekyll GitHub Actions workflow with integrated bilingual preprocessing.]]></summary></entry><entry><title type="html">Automated Bilingual Test - 自动双语测试</title><link href="http://localhost:4000/automated-bilingual-test/" rel="alternate" type="text/html" title="Automated Bilingual Test - 自动双语测试" /><published>2024-01-02T00:00:00-05:00</published><updated>2024-01-02T00:00:00-05:00</updated><id>http://localhost:4000/automated-bilingual-test</id><content type="html" xml:base="http://localhost:4000/automated-bilingual-test/"><![CDATA[<p>This post demonstrates the automated bilingual preprocessing with the official Jekyll GitHub Actions workflow! Users can now write content using the clean language syntax and GitHub Actions will automatically convert it to proper HTML.</p>
 
-  <hr />
-  <p>layout: post
-title: “Automated Bilingual Test - 自动双语测试”
-date: 2024-01-02
-slug: automated-bilingual-test
-bilingual: true
-—</p>
+<p>:::lang:en</p>
 
-  <p>This post demonstrates the automated bilingual preprocessing with GitHub Actions! Users can now write content using the clean language syntax and GitHub Actions will automatically convert it to proper HTML.</p>
+<h2 id="english-content">English Content</h2>
 
-  <div class="lang-content lang-en" data-lang="en">
+<p>This is written using the user-friendly syntax! The official Jekyll GitHub Actions workflow will automatically convert this to the proper HTML structure.</p>
 
-    <h2 id="english-content">English Content</h2>
+<h3 id="features">Features:</h3>
+<ul>
+  <li><strong>Official workflow</strong>: Uses the standard Jekyll GitHub Actions deployment</li>
+  <li><strong>Clean syntax</strong>: Write language markers instead of HTML divs</li>
+  <li><strong>Seamless integration</strong>: Works with GitHub Pages perfectly</li>
+  <li><strong>Zero configuration</strong>: Just push and the workflow handles everything</li>
+</ul>
 
-    <p>This is written using the user-friendly syntax! The GitHub Actions workflow will automatically convert this to the proper HTML structure.</p>
+<p>The streaming parser processes this content character by character and converts it to the proper HTML structure that the bilingual JavaScript and CSS expect.</p>
 
-    <h3 id="features">Features:</h3>
-    <ul>
-      <li><strong>Automatic processing</strong>: GitHub Actions processes files on every push</li>
-      <li><strong>Clean syntax</strong>: Write language markers instead of HTML divs</li>
-      <li><strong>Seamless integration</strong>: Works with GitHub Pages restrictions</li>
-      <li><strong>Zero configuration</strong>: Just push and the workflow handles everything</li>
-    </ul>
+<h3 id="how-it-works">How it works:</h3>
+<ol>
+  <li>You write content using language markers</li>
+  <li>Push to GitHub</li>
+  <li>Official Jekyll workflow processes the files with our bilingual step</li>
+  <li>Deploys to GitHub Pages with proper bilingual structure</li>
+</ol>
 
-    <p>The streaming parser processes this content character by character and converts it to the proper HTML structure that the bilingual JavaScript and CSS expect.</p>
+<p>:::lang:end</p>
 
-    <h3 id="how-it-works">How it works:</h3>
-    <ol>
-      <li>You write content using language markers</li>
-      <li>Push to GitHub</li>
-      <li>GitHub Actions automatically processes the files</li>
-      <li>Commits the converted HTML back to the repository</li>
-      <li>GitHub Pages builds the site with proper bilingual structure</li>
-    </ol>
+<p>:::lang:zh</p>
 
-  </div>
+<h2 id="中文内容">中文内容</h2>
 
-  <div class="lang-content lang-zh" data-lang="zh">
+<p>这是使用用户友好语法编写的！官方 Jekyll GitHub Actions 工作流程会自动将其转换为正确的 HTML 结构。</p>
 
-    <h2 id="section">中文内容</h2>
+<h3 id="特点">特点：</h3>
+<ul>
+  <li><strong>官方工作流</strong>：使用标准的 Jekyll GitHub Actions 部署</li>
+  <li><strong>清洁语法</strong>：写语言标记而不是 HTML div</li>
+  <li><strong>无缝集成</strong>：与 GitHub Pages 完美配合</li>
+  <li><strong>零配置</strong>：只需推送，工作流程处理一切</li>
+</ul>
 
-    <p>这是使用用户友好语法编写的！GitHub Actions 工作流程会自动将其转换为正确的 HTML 结构。</p>
+<p>流式解析器逐字符处理此内容，并将其转换为双语 JavaScript 和 CSS 期望的正确 HTML 结构。</p>
 
-    <h3 id="section-1">特点：</h3>
-    <ul>
-      <li><strong>自动处理</strong>：GitHub Actions 在每次推送时处理文件</li>
-      <li><strong>清洁语法</strong>：写语言标记而不是 HTML div</li>
-      <li><strong>无缝集成</strong>：与 GitHub Pages 限制配合使用</li>
-      <li><strong>零配置</strong>：只需推送，工作流程处理一切</li>
-    </ul>
+<h3 id="工作原理">工作原理：</h3>
+<ol>
+  <li>您使用语言标记编写内容</li>
+  <li>推送到 GitHub</li>
+  <li>官方 Jekyll 工作流程使用我们的双语步骤处理文件</li>
+  <li>使用正确的双语结构部署到 GitHub Pages</li>
+</ol>
 
-    <p>流式解析器逐字符处理此内容，并将其转换为双语 JavaScript 和 CSS 期望的正确 HTML 结构。</p>
+<p>:::lang:end</p>
 
-    <h3 id="section-2">工作原理：</h3>
-    <ol>
-      <li>您使用语言标记编写内容</li>
-      <li>推送到 GitHub</li>
-      <li>GitHub Actions 自动处理文件</li>
-      <li>将转换后的 HTML 提交回存储库</li>
-      <li>GitHub Pages 使用正确的双语结构构建站点</li>
-    </ol>
+<hr />
 
-  </div>
+<p>This conclusion appears in both languages since it’s outside the language blocks. The official Jekyll GitHub Actions workflow automatically wraps language-specific content in the appropriate HTML divs and adds the bilingual container.</p>
 
-  <hr />
-
-  <p>This conclusion appears in both languages since it’s outside the language blocks. The GitHub Actions workflow automatically wraps language-specific content in the appropriate HTML divs and adds the bilingual container.</p>
-
-  <p><strong>Perfect for content creators!</strong> 🎉 No more manual HTML conversion needed!</p>
-
-</div>]]></content><author><name></name></author><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">Hello World - 你好，世界</title><link href="http://localhost:4000/hello-world/" rel="alternate" type="text/html" title="Hello World - 你好，世界" /><published>2024-01-01T00:00:00-05:00</published><updated>2024-01-01T00:00:00-05:00</updated><id>http://localhost:4000/hello-world</id><content type="html" xml:base="http://localhost:4000/hello-world/"><![CDATA[<div class="bilingual-post">
+<p><strong>Perfect for content creators!</strong> 🎉 No more manual HTML conversion needed!</p>]]></content><author><name></name></author><summary type="html"><![CDATA[This post demonstrates the automated bilingual preprocessing with the official Jekyll GitHub Actions workflow! Users can now write content using the clean language syntax and GitHub Actions will automatically convert it to proper HTML.]]></summary></entry><entry><title type="html">Hello World - 你好，世界</title><link href="http://localhost:4000/hello-world/" rel="alternate" type="text/html" title="Hello World - 你好，世界" /><published>2024-01-01T00:00:00-05:00</published><updated>2024-01-01T00:00:00-05:00</updated><id>http://localhost:4000/hello-world</id><content type="html" xml:base="http://localhost:4000/hello-world/"><![CDATA[<div class="bilingual-post">
 
   <p>Welcome to this bilingual blog! This post demonstrates the streaming parser concept. Let me show you how the clean syntax works:</p>
 

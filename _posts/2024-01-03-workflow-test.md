@@ -1,35 +1,39 @@
 ---
 layout: post
-title: "Workflow Test - 工作流测试"
+title: "Official Jekyll Workflow Test - 官方工作流测试"
 date: 2024-01-03
 slug: workflow-test
 bilingual: true
 ---
 
-This is a simple test post to verify the GitHub Actions workflow is running properly.
+This test post uses the official Jekyll GitHub Actions workflow with integrated bilingual preprocessing.
 
 :::lang:en
 
-## English Test
+## English Test - Official Workflow
 
-This content should be automatically processed by GitHub Actions when pushed.
+This content should be automatically processed by the official Jekyll GitHub Actions workflow with our bilingual preprocessing step integrated.
 
-- Test item 1
-- Test item 2
-- Test item 3
+### Key Changes:
+- **Official Jekyll workflow**: Using the standard GitHub Actions Jekyll deployment
+- **Integrated preprocessing**: Our bilingual script runs before Jekyll build
+- **Proper deployment**: Uses official GitHub Pages deployment actions
+- **Better compatibility**: No more github-pages gem conflicts
 
 :::lang:end
 
 :::lang:zh
 
-## 中文测试
+## 中文测试 - 官方工作流
 
-这个内容应该在推送时由 GitHub Actions 自动处理。
+这个内容应该由集成了双语预处理步骤的官方 Jekyll GitHub Actions 工作流自动处理。
 
-- 测试项目 1
-- 测试项目 2  
-- 测试项目 3
+### 主要变化：
+- **官方 Jekyll 工作流**：使用标准的 GitHub Actions Jekyll 部署
+- **集成预处理**：我们的双语脚本在 Jekyll 构建之前运行
+- **正确部署**：使用官方 GitHub Pages 部署操作
+- **更好兼容性**：不再有 github-pages gem 冲突
 
 :::lang:end
 
-If you see this content with `:::lang:` markers still visible, then the GitHub Actions workflow is not running properly. 
+If this post displays correctly with language switching, then our official Jekyll workflow integration is working perfectly! 🎉 
