@@ -34,7 +34,8 @@ jobs:
       uses: ruby/setup-ruby@v1
       with:
         ruby-version: '3.4.4'
-        bundler-cache: true
+        # Remove bundler-cache to avoid github-pages gem conflicts
+        bundler-cache: false
     
     - name: Find and process bilingual files
       run: |
@@ -55,7 +56,7 @@ jobs:
               # Create backup
               cp "$file" "${file}.backup"
               
-              # Process the file
+              # Process the file using Ruby directly (no bundler)
               if ruby scripts/bilingual_preprocessor.rb "$file"; then
                 echo "  ✅ Successfully processed $file"
                 processed_count=$((processed_count + 1))
