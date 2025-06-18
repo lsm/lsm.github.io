@@ -1,4 +1,34 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2025-06-18T02:41:09-04:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Marc Liu</title><subtitle>A place to write</subtitle><entry><title type="html">Automated Bilingual Test</title><link href="http://localhost:4000/automated-bilingual-test/" rel="alternate" type="text/html" title="Automated Bilingual Test" /><published>2024-01-02T00:00:00-05:00</published><updated>2024-01-02T00:00:00-05:00</updated><id>http://localhost:4000/automated-bilingual-test</id><content type="html" xml:base="http://localhost:4000/automated-bilingual-test/"><![CDATA[<div class="bilingual-post">
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2025-06-18T02:42:04-04:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Marc Liu</title><subtitle>A place to write</subtitle><entry><title type="html">Workflow Test - 工作流测试</title><link href="http://localhost:4000/workflow-test/" rel="alternate" type="text/html" title="Workflow Test - 工作流测试" /><published>2024-01-03T00:00:00-05:00</published><updated>2024-01-03T00:00:00-05:00</updated><id>http://localhost:4000/workflow-test</id><content type="html" xml:base="http://localhost:4000/workflow-test/"><![CDATA[<p>This is a simple test post to verify the GitHub Actions workflow is running properly.</p>
+
+<p>:::lang:en</p>
+
+<h2 id="english-test">English Test</h2>
+
+<p>This content should be automatically processed by GitHub Actions when pushed.</p>
+
+<ul>
+  <li>Test item 1</li>
+  <li>Test item 2</li>
+  <li>Test item 3</li>
+</ul>
+
+<p>:::lang:end</p>
+
+<p>:::lang:zh</p>
+
+<h2 id="中文测试">中文测试</h2>
+
+<p>这个内容应该在推送时由 GitHub Actions 自动处理。</p>
+
+<ul>
+  <li>测试项目 1</li>
+  <li>测试项目 2</li>
+  <li>测试项目 3</li>
+</ul>
+
+<p>:::lang:end</p>
+
+<p>If you see this content with <code class="language-plaintext highlighter-rouge">:::lang:</code> markers still visible, then the GitHub Actions workflow is not running properly.</p>]]></content><author><name></name></author><summary type="html"><![CDATA[This is a simple test post to verify the GitHub Actions workflow is running properly.]]></summary></entry><entry><title type="html">Automated Bilingual Test</title><link href="http://localhost:4000/automated-bilingual-test/" rel="alternate" type="text/html" title="Automated Bilingual Test" /><published>2024-01-02T00:00:00-05:00</published><updated>2024-01-02T00:00:00-05:00</updated><id>http://localhost:4000/automated-bilingual-test</id><content type="html" xml:base="http://localhost:4000/automated-bilingual-test/"><![CDATA[<div class="bilingual-post">
 
   <hr />
   <p>layout: post

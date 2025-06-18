@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workflow Test - 工作流测试</title>
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/custom.css">
+    
+    <!-- Initialize language preference before content loads to prevent flash -->
+    <script>
+        (function() {
+            const savedLang = localStorage.getItem('blog-language') || 'en';
+            document.documentElement.setAttribute('data-lang', savedLang);
+        })();
+    </script>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="/" class="site-title">Marc Liu</a>
+            <button id="theme-toggle" aria-label="Toggle theme">
+                <img id="sun-icon" class="theme-icon" src="/assets/icons/sun.svg" alt="Sun Icon">
+                <img id="moon-icon" class="theme-icon" src="/assets/icons/moon.svg" alt="Moon Icon" style="display: none;">
+            </button>
+        </nav>
+    </header>
+
+    <article class="post">
+    <header class="post-header">
+        <!-- Language toggle link (only show if post is bilingual) -->
+        
+        <div class="language-toggle">
+            <a href="#" id="lang-toggle" class="lang-toggle-link">
+                <span class="lang-switch-text" data-lang="zh">中文版</span>
+                <span class="lang-switch-text" data-lang="en">English Version</span>
+            </a>
+        </div>
+        
+        
+        <div class="post-title-row">
+            <h1>Workflow Test - 工作流测试</h1>
+            <time datetime="2024-01-03T00:00:00-05:00">
+                January 03, 2024
+            </time>
+        </div>
+    </header>
+
+    <div class="post-content">
+        <p>This is a simple test post to verify the GitHub Actions workflow is running properly.</p>
+
+<p>:::lang:en</p>
+
+<h2 id="english-test">English Test</h2>
+
+<p>This content should be automatically processed by GitHub Actions when pushed.</p>
+
+<ul>
+  <li>Test item 1</li>
+  <li>Test item 2</li>
+  <li>Test item 3</li>
+</ul>
+
+<p>:::lang:end</p>
+
+<p>:::lang:zh</p>
+
+<h2 id="中文测试">中文测试</h2>
+
+<p>这个内容应该在推送时由 GitHub Actions 自动处理。</p>
+
+<ul>
+  <li>测试项目 1</li>
+  <li>测试项目 2</li>
+  <li>测试项目 3</li>
+</ul>
+
+<p>:::lang:end</p>
+
+<p>If you see this content with <code class="language-plaintext highlighter-rouge">:::lang:</code> markers still visible, then the GitHub Actions workflow is not running properly.</p>
+
+    </div>
+
+    <section class="comments">
+        <h2>Comments</h2>
+        <div id="comments-container"></div>
+        <script type="application/json" id="comments-data">
+            
+            null
+        </script>
+        
+        <div class="comment-info">
+            <!-- Language toggle for comment instructions (only show if post is bilingual) -->
+            
+            <div class="comment-info-language-toggle">
+                <a href="#" id="comments-lang-toggle" class="lang-toggle-link">
+                    <span class="lang-switch-text" data-lang="zh">中文版</span>
+                    <span class="lang-switch-text" data-lang="en">English Version</span>
+                </a>
+            </div>
+            
+            
+            <div class="lang-en">
+                <p><strong>How to add a comment:</strong></p>
+                <ol>
+                    <li>
+                        <a href="https://github.com/lsm/lsm.github.io/edit/main/_data/comments/2024-01-03-workflow-test.yml" target="_blank">
+                            Edit the comments file directly on GitHub
+                        </a>
+                    </li>
+                    <li>Add your comment using the YAML format</li>
+                    <li>Submit a pull request</li>
+                </ol>
+                <p>
+                    📝 <a href="https://github.com/lsm/lsm.github.io/blob/main/.github/COMMENT_TEMPLATE.md" target="_blank">
+                        View comment template and guidelines
+                    </a>
+                </p>
+            </div>
+            <div class="lang-zh">
+                <p><strong>如何添加评论：</strong></p>
+                <ol>
+                    <li>
+                        <a href="https://github.com/lsm/lsm.github.io/edit/main/_data/comments/2024-01-03-workflow-test.yml" target="_blank">
+                            直接在GitHub上编辑评论文件
+                        </a>
+                    </li>
+                    <li>使用YAML格式添加您的评论</li>
+                    <li>提交拉取请求</li>
+                </ol>
+                <p>
+                    📝 <a href="https://github.com/lsm/lsm.github.io/blob/main/.github/COMMENT_TEMPLATE.md" target="_blank">
+                        查看评论模板和指南
+                    </a>
+                </p>
+            </div>
+        </div>
+    </section>
+</article>
+
+<script src="/assets/js/comments.js"></script>
+
+
+    <footer>
+        <p>© 2025 Marc Liu</p>
+    </footer>
+
+    <script src="/assets/js/main.js"></script>
+</body>
+</html>
