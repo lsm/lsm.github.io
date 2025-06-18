@@ -8,6 +8,10 @@ bilingual: true
 
 This post demonstrates the automated bilingual preprocessing with the official Jekyll GitHub Actions workflow! Users can now write content using the clean language syntax and GitHub Actions will automatically convert it to proper HTML.
 
+
+
+
+
 :::lang:en
 
 ## English Content
@@ -29,7 +33,6 @@ The streaming parser processes this content character by character and converts 
 4. Deploys to GitHub Pages with proper bilingual structure
 
 :::lang:end
-
 :::lang:zh
 
 ## 中文内容
@@ -51,9 +54,10 @@ The streaming parser processes this content character by character and converts 
 4. 使用正确的双语结构部署到 GitHub Pages
 
 :::lang:end
-
 ---
 
 This conclusion appears in both languages since it's outside the language blocks. The official Jekyll GitHub Actions workflow automatically wraps language-specific content in the appropriate HTML divs and adds the bilingual container.
 
 **Perfect for content creators!** 🎉 No more manual HTML conversion needed!
+
+:::lang:end

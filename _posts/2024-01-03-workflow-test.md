@@ -8,6 +8,10 @@ bilingual: true
 
 This test post uses the official Jekyll GitHub Actions workflow with integrated bilingual preprocessing.
 
+
+
+
+
 :::lang:en
 
 ## English Test - Official Workflow
@@ -21,7 +25,6 @@ This content should be automatically processed by the official Jekyll GitHub Act
 - **Better compatibility**: No more github-pages gem conflicts
 
 :::lang:end
-
 :::lang:zh
 
 ## 中文测试 - 官方工作流
@@ -35,5 +38,6 @@ This content should be automatically processed by the official Jekyll GitHub Act
 - **更好兼容性**：不再有 github-pages gem 冲突
 
 :::lang:end
+If this post displays correctly with language switching, then our official Jekyll workflow integration is working perfectly! 🎉
 
-If this post displays correctly with language switching, then our official Jekyll workflow integration is working perfectly! 🎉 
+:::lang:end

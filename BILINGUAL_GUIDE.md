@@ -1,5 +1,3 @@
-<div class="bilingual-post" markdown="1">
-
 # Bilingual Blog Guide
 
 This guide explains how to create bilingual blog posts with a clean, user-friendly syntax.
@@ -18,23 +16,21 @@ bilingual: true
 This content appears in both languages.
 
 
-<div class="lang-content lang-en" data-lang="en" markdown="1">
+
+
+
+:::lang:en
 
 # English Section
 This content only appears in English.
 
-
-</div>
-
-
-<div class="lang-content lang-zh" data-lang="zh" markdown="1">
+:::lang:end
+:::lang:zh
 
 # 中文部分
 这个内容只在中文中显示。
 
-
-</div>
-
+:::lang:end
 This conclusion appears in both languages.
 ```
 
@@ -72,13 +68,15 @@ The script will:
 1. **Write** your post with clean syntax:
    ```markdown
    
-<div class="lang-content lang-en" data-lang="en" markdown="1">
 
-   English content here
-   
 
-</div>
-   ```
+
+:::lang:en
+
+English content here
+
+:::lang:end
+```
 
 2. **Process** with the streaming parser:
    ```bash
@@ -87,10 +85,15 @@ The script will:
 
 3. **Result** is Jekyll-compatible HTML:
    ```html
-   <div class="lang-content lang-en" data-lang="en" markdown="1">
-   English content here
-   </div>
-   ```
+   
+
+
+:::lang:en
+
+English content here
+
+:::lang:end
+```
 
 ## Benefits of This Approach
 
@@ -156,8 +159,6 @@ bilingual: true
 Use Markdown blockquotes with Kramdown attributes for language-specific content:
 
 ```markdown
-<div class="bilingual-post" markdown="1">
-
 <!-- Common content that appears in both languages -->
 Welcome to this bilingual blog!
 
@@ -192,7 +193,6 @@ Welcome to this bilingual blog!
 <!-- More common content -->
 This appears in both languages.
 
-</div>
 ```
 
 ### 3. Key Syntax Elements
@@ -201,7 +201,7 @@ This appears in both languages.
 - **Kramdown Attributes**: Use `{: .class-name}` to add CSS classes and attributes
 - **Language Classes**: `.lang-content .lang-en` for English, `.lang-content .lang-zh` for Chinese
 - **Data Attributes**: `data-lang="en"` and `data-lang="zh"` for JavaScript functionality
-- **Container**: Wrap everything in `<div class="bilingual-post" markdown="1">`
+- **Container**: Wrap everything in ``
 
 ## Example Post Structure
 
@@ -213,8 +213,6 @@ date: 2024-01-01
 slug: hello-world
 bilingual: true
 ---
-
-<div class="bilingual-post" markdown="1">
 
 This introduction appears in both languages.
 
@@ -232,7 +230,6 @@ This introduction appears in both languages.
 
 This conclusion appears in both languages.
 
-</div>
 ```
 
 ## Why This Approach?
@@ -291,6 +288,6 @@ Common content here...
 > **中文 - 结论**
 > 这是中文结论。
 {: .lang-content .lang-zh data-lang="zh"}
-``` 
+```
 
-</div>
+:::lang:end

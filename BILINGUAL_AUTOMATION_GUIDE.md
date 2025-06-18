@@ -1,5 +1,3 @@
-<div class="bilingual-post" markdown="1">
-
 # Automated Bilingual Content System
 
 This guide explains the automated bilingual content processing system using GitHub Actions and Jekyll for your blog.
@@ -20,25 +18,23 @@ bilingual: true
 Introduction text appears in both languages.
 
 
-<div class="lang-content lang-en" data-lang="en" markdown="1">
+
+
+
+:::lang:en
 
 English content here.
 - Easy to write
 - Clean syntax
 
-
-</div>
-
-
-<div class="lang-content lang-zh" data-lang="zh" markdown="1">
+:::lang:end
+:::lang:zh
 
 中文内容在这里。
 - 易于编写
 - 清洁语法
 
-
-</div>
-
+:::lang:end
 Conclusion appears in both languages.
 ```
 
@@ -50,21 +46,21 @@ When you push to GitHub, the workflow:
 
 ### 3. **Result: Perfect HTML Structure**
 ```html
-<div class="bilingual-post" markdown="1">
 
-<div class="lang-content lang-en" data-lang="en" markdown="1">
+
+
+:::lang:en
+
 English content here.
 - Easy to write
 - Clean syntax
-</div>
 
-<div class="lang-content lang-zh" data-lang="zh" markdown="1">
+:::lang:end
+:::lang:zh
+
 中文内容在这里。
 - 易于编写
 - 清洁语法
-</div>
-
-</div>
 ```
 
 ## 🚀 Getting Started
@@ -93,22 +89,17 @@ bilingual: true  # Required for processing
 
 Shared content (appears in both languages)
 
-
-<div class="lang-content lang-en" data-lang="en" markdown="1">
+:::lang:end
+:::lang:en
 
 English-only content
 
-
-</div>
-
-
-<div class="lang-content lang-zh" data-lang="zh" markdown="1">
+:::lang:end
+:::lang:zh
 
 Chinese-only content
 
-
-</div>
-
+:::lang:end
 More shared content
 ```
 
@@ -118,7 +109,10 @@ More shared content
 All standard markdown works inside language blocks:
 ```markdown
 
-<div class="lang-content lang-en" data-lang="en" markdown="1">
+
+
+
+:::lang:en
 
 ## English Heading
 
@@ -130,8 +124,7 @@ All standard markdown works inside language blocks:
 
 ```code blocks```
 
-
-</div>
+:::lang:end
 ```
 
 ## 🔧 Technical Details
@@ -242,6 +235,6 @@ Enable debug output by adding `debug: true` to your post's front matter. This wi
 3. **Add languages**: Extend support for additional languages
 4. **Monitor workflow**: Check GitHub Actions for processing logs
 
-The automated bilingual system makes it effortless to create multilingual content while maintaining full compatibility with GitHub Pages! 🎉 
+The automated bilingual system makes it effortless to create multilingual content while maintaining full compatibility with GitHub Pages! 🎉
 
-</div>
+:::lang:end
