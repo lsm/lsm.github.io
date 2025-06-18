@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2025-06-18T03:31:09-04:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Marc Liu</title><subtitle>A place to write</subtitle><entry><title type="html">Hello World - 你好，世界</title><link href="http://localhost:4000/hello-world/" rel="alternate" type="text/html" title="Hello World - 你好，世界" /><published>2024-01-01T00:00:00-05:00</published><updated>2024-01-01T00:00:00-05:00</updated><id>http://localhost:4000/hello-world</id><content type="html" xml:base="http://localhost:4000/hello-world/"><![CDATA[<div class="bilingual-post">
+
+  <p>Welcome to this bilingual blog! This post demonstrates the streaming parser concept. Let me show you how the clean syntax works:</p>
+
+  <div class="lang-content lang-en" data-lang="en">
+
+    <h2 id="english-section">English Section</h2>
+
+    <p>This is the English version of the content. You can write your thoughts, ideas, and stories in English here.</p>
+
+    <h3 id="features-of-this-bilingual-blog">Features of this bilingual blog:</h3>
+    <ul>
+      <li>Toggle between languages with a simple button</li>
+      <li>Seamless switching without page reload</li>
+      <li>Language preference is saved locally</li>
+      <li>Mixed content support (some sections can be common to both languages)</li>
+      <li><strong>Streaming parser</strong> - processes content character by character!</li>
+    </ul>
+
+    <p>This section will only be visible when English is selected.</p>
+
+  </div>
+
+  <div class="lang-content lang-zh" data-lang="zh">
+
+    <h2 id="section">中文部分</h2>
+
+    <p>这是内容的中文版本。您可以在这里用中文写下您的想法、观点和故事。</p>
+
+    <h3 id="section-1">这个双语博客的特点：</h3>
+    <ul>
+      <li>通过简单的按钮在语言之间切换</li>
+      <li>无需重新加载页面即可无缝切换</li>
+      <li>语言偏好设置会在本地保存</li>
+      <li>支持混合内容（某些部分可以是两种语言共同的）</li>
+      <li><strong>流式解析器</strong> - 逐字符处理内容！</li>
+    </ul>
+
+    <p>这个部分只有在选择中文时才会显示。</p>
+
+  </div>
+  <p>This conclusion section appears in both languages since it’s not wrapped in language divs.</p>
+
+  <p><strong>For authors who want the clean syntax</strong> - this is how you write it! The bilingual preprocessor will automatically convert this to proper HTML during build.</p>
+
+</div>]]></content><author><name></name></author><summary type="html"><![CDATA[Welcome to this bilingual blog! This post demonstrates the streaming parser concept. Let me show you how the clean syntax works:]]></summary></entry></feed>

@@ -10,7 +10,6 @@ Welcome to this bilingual blog! This post demonstrates the streaming parser conc
 
 
 
-
 :::lang:en
 
 ## English Section
@@ -43,10 +42,8 @@ This section will only be visible when English is selected.
 这个部分只有在选择中文时才会显示。
 
 :::lang:end
----
-
 This conclusion section appears in both languages since it's not wrapped in language divs.
 
-**For authors who want the clean `
+**For authors who want the clean syntax** - this is how you write it! The bilingual preprocessor will automatically convert this to proper HTML during build.
 
 :::lang:end

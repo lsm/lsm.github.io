@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marc Liu</title>
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/custom.css">
+    
+    <!-- Initialize language preference before content loads to prevent flash -->
+    <script>
+        (function() {
+            const savedLang = localStorage.getItem('blog-language') || 'en';
+            document.documentElement.setAttribute('data-lang', savedLang);
+        })();
+    </script>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="/" class="site-title">Marc Liu</a>
+            <button id="theme-toggle" aria-label="Toggle theme">
+                <img id="sun-icon" class="theme-icon" src="/assets/icons/sun.svg" alt="Sun Icon">
+                <img id="moon-icon" class="theme-icon" src="/assets/icons/moon.svg" alt="Moon Icon" style="display: none;">
+            </button>
+        </nav>
+    </header>
+
+    <main class="post-list">
+  
+    <article class="post-preview">
+      <h2>
+        <a href="/hello-world/">Hello World - 你好，世界</a>
+      </h2>
+      <time datetime="2024-01-01T00:00:00-05:00">
+        January 01, 2024
+      </time>
+      <div class="post-excerpt">
+        <p>Welcome to this bilingual blog! This post demonstrates the streaming parser concept. Let me show you how the clean syntax works:</p>
+
+      </div>
+    </article>
+  
+</main>
+
+
+    <footer>
+        <p>© 2025 Marc Liu</p>
+    </footer>
+
+    <script src="/assets/js/main.js"></script>
+</body>
+</html>
