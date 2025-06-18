@@ -46,4 +46,6 @@ This conclusion section appears in both languages since it's not wrapped in lang
 
 **For authors who want the clean syntax** - this is how you write it! The bilingual preprocessor will automatically convert this to proper HTML during build.
 
-:::lang:end
+
+
+</div>
