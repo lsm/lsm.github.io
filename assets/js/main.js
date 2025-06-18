@@ -41,12 +41,9 @@ document.addEventListener('DOMContentLoaded', () => {
     
     if (!langToggle || !bilingualPost) return;
     
-    // Check for saved language preference or default to 'en'
-    const savedLang = localStorage.getItem('blog-language') || 'en';
-    
-    // Initialize language display
-    switchLanguage(savedLang);
-    updateToggleButton(savedLang);
+    // Get current language (should already be set by inline script)
+    const currentLang = document.documentElement.getAttribute('data-lang') || 'en';
+    updateToggleButton(currentLang);
     
     // Add click event to language toggle
     langToggle.addEventListener('click', () => {
@@ -60,18 +57,6 @@ document.addEventListener('DOMContentLoaded', () => {
     
     function switchLanguage(lang) {
         document.documentElement.setAttribute('data-lang', lang);
-        
-        // Hide all language content
-        const allLangContent = document.querySelectorAll('.lang-content');
-        allLangContent.forEach(content => {
-            content.style.display = 'none';
-        });
-        
-        // Show content for selected language
-        const selectedLangContent = document.querySelectorAll(`.lang-${lang}`);
-        selectedLangContent.forEach(content => {
-            content.style.display = 'block';
-        });
     }
     
     function updateToggleButton(activeLang) {

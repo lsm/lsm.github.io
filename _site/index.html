@@ -6,6 +6,14 @@
     <title>Marc Liu</title>
     <link rel="stylesheet" href="/assets/css/style.css">
     <link rel="stylesheet" href="/assets/css/custom.css">
+    
+    <!-- Initialize language preference before content loads to prevent flash -->
+    <script>
+        (function() {
+            const savedLang = localStorage.getItem('blog-language') || 'en';
+            document.documentElement.setAttribute('data-lang', savedLang);
+        })();
+    </script>
 </head>
 <body>
     <header>

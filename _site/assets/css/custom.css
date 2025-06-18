@@ -300,15 +300,26 @@ a:hover {
     position: relative !important;
 }
 
+/* Hide all language content by default */
 .lang-content {
+    display: none !important;
     transition: opacity 0.3s ease !important;
 }
 
-.lang-content[style*="display: none"] {
-    opacity: 0 !important;
+/* Show content based on data-lang attribute on html element */
+html[data-lang="en"] .lang-en {
+    display: block !important;
+    opacity: 1 !important;
 }
 
-.lang-content[style*="display: block"] {
+html[data-lang="zh"] .lang-zh {
+    display: block !important;
+    opacity: 1 !important;
+}
+
+/* Fallback: if no data-lang is set, show English by default */
+html:not([data-lang]) .lang-en {
+    display: block !important;
     opacity: 1 !important;
 }
 
