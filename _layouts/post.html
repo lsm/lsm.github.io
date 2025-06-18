@@ -32,23 +32,36 @@ layout: default
             {% assign comment_key = page.date | date: "%Y-%m-%d" | append: "-" | append: page.slug %}
             {{ site.data.comments[comment_key] | jsonify }}
         </script>
+        
         <div class="comment-info">
-            <p><strong>How to add a comment:</strong></p>
-            <ol>
-                <li>
-                    <a href="https://github.com/{{ site.github.owner_name | default: 'lsm' }}/{{ site.github.repository_name | default: 'lsm.github.io' }}/edit/main/_data/comments/{{ comment_key }}.yml" target="_blank">
-                        Edit the comments file directly on GitHub
-                    </a>
-                </li>
-                <li>Add your comment using the YAML format</li>
-                <li>Submit a pull request</li>
-            </ol>
-            <p>
-                📝 <a href="https://github.com/{{ site.github.owner_name | default: 'lsm' }}/{{ site.github.repository_name | default: 'lsm.github.io' }}/blob/main/.github/COMMENT_TEMPLATE.md" target="_blank">
-                    View comment template and guidelines
+            <!-- Language toggle for comment instructions (only show if post is bilingual) -->
+            {% if page.bilingual %}
+            <div class="comment-info-language-toggle">
+                <a href="#" id="comments-lang-toggle" class="lang-toggle-link">
+                    <span class="lang-switch-text" data-lang="zh">中文版</span>
+                    <span class="lang-switch-text" data-lang="en">English Version</span>
                 </a>
-            </p>
-            <div class="zh">
+            </div>
+            {% endif %}
+            
+            <div class="lang-en">
+                <p><strong>How to add a comment:</strong></p>
+                <ol>
+                    <li>
+                        <a href="https://github.com/{{ site.github.owner_name | default: 'lsm' }}/{{ site.github.repository_name | default: 'lsm.github.io' }}/edit/main/_data/comments/{{ comment_key }}.yml" target="_blank">
+                            Edit the comments file directly on GitHub
+                        </a>
+                    </li>
+                    <li>Add your comment using the YAML format</li>
+                    <li>Submit a pull request</li>
+                </ol>
+                <p>
+                    📝 <a href="https://github.com/{{ site.github.owner_name | default: 'lsm' }}/{{ site.github.repository_name | default: 'lsm.github.io' }}/blob/main/.github/COMMENT_TEMPLATE.md" target="_blank">
+                        View comment template and guidelines
+                    </a>
+                </p>
+            </div>
+            <div class="lang-zh">
                 <p><strong>如何添加评论：</strong></p>
                 <ol>
                     <li>

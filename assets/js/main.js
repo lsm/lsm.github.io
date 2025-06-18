@@ -37,21 +37,36 @@ document.addEventListener('DOMContentLoaded', () => {
 // Language switcher for bilingual posts
 document.addEventListener('DOMContentLoaded', () => {
     const langToggle = document.getElementById('lang-toggle');
+    const commentsLangToggle = document.getElementById('comments-lang-toggle');
     const bilingualPost = document.querySelector('.bilingual-post');
     
-    if (!langToggle || !bilingualPost) return;
-    
-    // Add click event to language toggle
-    langToggle.addEventListener('click', (e) => {
-        e.preventDefault();
-        const currentLang = document.documentElement.getAttribute('data-lang') || 'en';
-        const newLang = currentLang === 'en' ? 'zh' : 'en';
-        
-        switchLanguage(newLang);
-        localStorage.setItem('blog-language', newLang);
-    });
+    if (!bilingualPost) return;
     
     function switchLanguage(lang) {
         document.documentElement.setAttribute('data-lang', lang);
+    }
+    
+    // Add click event to main language toggle
+    if (langToggle) {
+        langToggle.addEventListener('click', (e) => {
+            e.preventDefault();
+            const currentLang = document.documentElement.getAttribute('data-lang') || 'en';
+            const newLang = currentLang === 'en' ? 'zh' : 'en';
+            
+            switchLanguage(newLang);
+            localStorage.setItem('blog-language', newLang);
+        });
+    }
+    
+    // Add click event to comments language toggle
+    if (commentsLangToggle) {
+        commentsLangToggle.addEventListener('click', (e) => {
+            e.preventDefault();
+            const currentLang = document.documentElement.getAttribute('data-lang') || 'en';
+            const newLang = currentLang === 'en' ? 'zh' : 'en';
+            
+            switchLanguage(newLang);
+            localStorage.setItem('blog-language', newLang);
+        });
     }
 });

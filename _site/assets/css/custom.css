@@ -195,6 +195,7 @@ a:hover {
     background: var(--bg-color) !important;
     border: 1px solid var(--border-color) !important;
     border-radius: 8px !important;
+    position: relative !important;
 }
 
 .comment-info p {
@@ -221,12 +222,7 @@ a:hover {
     color: var(--text-color) !important;
 }
 
-.comment-info .zh {
-    margin-top: 1rem !important;
-    padding-top: 1rem !important;
-    border-top: 1px solid var(--border-color) !important;
-    font-family: var(--font-serif) !important;
-}
+
 
 .no-comments {
     color: var(--secondary-text) !important;
@@ -309,6 +305,37 @@ html:not([data-lang]) .lang-switch-text[data-lang="zh"] {
     }
 }
 
+/* Comment Info Language Toggle */
+.comment-info-language-toggle {
+    position: absolute !important;
+    top: 0.5rem !important;
+    right: 1rem !important;
+    margin: 0 !important;
+}
+
+.comment-info-language-toggle .lang-toggle-link {
+    font-size: 0.75rem !important;
+    color: var(--secondary-text) !important;
+    text-decoration: none !important;
+    transition: color 0.2s ease !important;
+    opacity: 0.6 !important;
+}
+
+.comment-info-language-toggle .lang-toggle-link:hover {
+    color: var(--link-color) !important;
+    opacity: 1 !important;
+    text-decoration: underline !important;
+}
+
+/* Responsive design for comment info language toggle */
+@media (max-width: 600px) {
+    .comment-info-language-toggle {
+        position: static !important;
+        text-align: center !important;
+        margin-bottom: 1rem !important;
+    }
+}
+
 /* Bilingual Content Styles */
 .bilingual-post {
     position: relative !important;
@@ -335,6 +362,24 @@ html[data-lang="zh"] .lang-zh {
 html:not([data-lang]) .lang-en {
     display: block !important;
     opacity: 1 !important;
+}
+
+/* Ensure comment info language sections are properly controlled */
+.comment-info .lang-en,
+.comment-info .lang-zh {
+    display: none !important;
+}
+
+html[data-lang="en"] .comment-info .lang-en {
+    display: block !important;
+}
+
+html[data-lang="zh"] .comment-info .lang-zh {
+    display: block !important;
+}
+
+html:not([data-lang]) .comment-info .lang-en {
+    display: block !important;
 }
 
 /* Language-specific typography */
