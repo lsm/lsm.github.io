@@ -13,16 +13,34 @@ layout: default
         {{ content }}
     </div>
 
-    <!-- <section class="comments">
+    <section class="comments">
         <h2>Comments</h2>
         <div id="comments-container"></div>
-        <p class="comment-info">
-            To add a comment, please create a pull request to edit the 
-            <a href="https://github.com/USERNAME/REPO/blob/main/_data/comments/{{ page.date | date: '%Y-%m-%d' }}-{{ page.slug }}.yml">
-                comments file
-            </a>
-        </p>
-    </section> -->
+        <script type="application/json" id="comments-data">
+            {{ site.data.comments[page.slug] | jsonify }}
+        </script>
+        <div class="comment-info">
+            <p><strong>How to add a comment:</strong></p>
+            <ol>
+                <li>
+                    <a href="https://github.com/{{ site.github.owner_name | default: 'lsm' }}/{{ site.github.repository_name | default: 'lsm.github.io' }}/edit/main/_data/comments/{{ page.slug }}.yml" target="_blank">
+                        Edit the comments file directly on GitHub
+                    </a>
+                </li>
+                <li>Add your comment using the YAML format</li>
+                <li>Submit a pull request</li>
+            </ol>
+            <p>
+                <a href="https://github.com/{{ site.github.owner_name | default: 'lsm' }}/{{ site.github.repository_name | default: 'lsm.github.io' }}/blob/main/.github/COMMENT_TEMPLATE.md" target="_blank">
+                    📝 View comment template and guidelines
+                </a>
+            </p>
+            <p class="zh">
+                <strong>如何添加评论：</strong><br>
+                点击上面的链接编辑评论文件，使用YAML格式添加您的评论，然后提交拉取请求。
+            </p>
+        </div>
+    </section>
 </article>
 
-<!-- <script src="/assets/js/comments.js"></script> -->
+<script src="/assets/js/comments.js"></script>

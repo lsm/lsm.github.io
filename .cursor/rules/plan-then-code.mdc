@@ -1,0 +1,18 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+---
+description: Make a plan for the request before coding
+globs:
+alwaysApply: false
+---
+
+# Plan then code instructions
+
+- First read and understand any code, files, docs, urls, errors and request itself provided in the context.
+- Reiterate the coding request in your own words.
+- Then make a plan to solve this coding problem, break it down into smaller steps or components.
+- Finally, work on it step-by-step. For each step, tell the plan to the user then work on the step.
+- Be concise.

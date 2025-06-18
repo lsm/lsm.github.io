@@ -1,6 +1,6 @@
 # Site settings
-title: Bilingual Blog
-description: A minimalist bilingual blog
+title: Marc Liu
+description: A place to write
 
 # Build settings
 markdown: kramdown
@@ -12,6 +12,11 @@ baseurl: "" # the subpath of your site, e.g. /blog
 
 # Comments settings
 comments_dir: _data/comments
+
+# GitHub repository settings (for PR-based comments)
+github:
+  owner_name: lsm
+  repository_name: lsm.github.io
 
 # Plugins
 plugins:

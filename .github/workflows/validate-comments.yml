@@ -1,0 +1,54 @@
+name: Validate Comments
+
+on:
+  pull_request:
+    paths:
+      - '_data/comments/**'
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Set up Ruby
+      uses: ruby/setup-ruby@v1
+      with:
+        ruby-version: '3.2'
+        bundler-cache: true
+    
+    - name: Validate YAML files
+      run: |
+        for file in _data/comments/*.yml; do
+          if [ -f "$file" ]; then
+            echo "Validating $file"
+            ruby -ryaml -e "
+              begin
+                data = YAML.load_file('$file')
+                if data.is_a?(Array)
+                  data.each_with_index do |comment, index|
+                    raise 'Missing author' unless comment['author']
+                    raise 'Missing content' unless comment['content']
+                    raise 'Missing date' unless comment['date']
+                    begin
+                      Time.parse(comment['date'])
+                    rescue
+                      raise 'Invalid date format'
+                    end
+                  end
+                  puts '✅ $file is valid'
+                else
+                  raise 'Comments file should contain an array'
+                end
+              rescue => e
+                puts '❌ Error in $file: #{e.message}'
+                exit 1
+              end
+            "
+          fi
+        done
+    
+    - name: Check for required fields
+      run: |
+        echo "All comment files are valid! 🎉" 

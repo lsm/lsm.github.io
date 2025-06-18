@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ page.title }}</title>
+    <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
     <link rel="stylesheet" href="/assets/css/style.css">
 </head>
 <body>
     <header>
         <nav>
-            <a href="/" class="site-title">Bilingual Blog</a>
+            <a href="/" class="site-title">{{ site.title }}</a>
             <button id="theme-toggle" aria-label="Toggle theme">
                 <img id="sun-icon" class="theme-icon" src="/assets/icons/sun.svg" alt="Sun Icon">
                 <img id="moon-icon" class="theme-icon" src="/assets/icons/moon.svg" alt="Moon Icon" style="display: none;">
@@ -20,7 +20,7 @@
     {{ content }}
 
     <footer>
-        <p>© {{ site.time | date: '%Y' }} Bilingual Blog</p>
+        <p>© {{ site.time | date: '%Y' }} {{ site.title }}</p>
     </footer>
 
     <script src="/assets/js/main.js"></script>

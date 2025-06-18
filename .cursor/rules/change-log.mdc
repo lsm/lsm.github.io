@@ -1,0 +1,12 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+---
+description:
+globs:
+alwaysApply: false
+---
+- Use `git --no-pager diff --staged` to get staged code.
+- Generate git commit message for the changes.
