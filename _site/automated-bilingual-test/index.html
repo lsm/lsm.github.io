@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automated Bilingual Test</title>
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/custom.css">
+    
+    <!-- Initialize language preference before content loads to prevent flash -->
+    <script>
+        (function() {
+            const savedLang = localStorage.getItem('blog-language') || 'en';
+            document.documentElement.setAttribute('data-lang', savedLang);
+        })();
+    </script>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="/" class="site-title">Marc Liu</a>
+            <button id="theme-toggle" aria-label="Toggle theme">
+                <img id="sun-icon" class="theme-icon" src="/assets/icons/sun.svg" alt="Sun Icon">
+                <img id="moon-icon" class="theme-icon" src="/assets/icons/moon.svg" alt="Moon Icon" style="display: none;">
+            </button>
+        </nav>
+    </header>
+
+    <article class="post">
+    <header class="post-header">
+        <!-- Language toggle link (only show if post is bilingual) -->
+        
+        
+        <div class="post-title-row">
+            <h1>Automated Bilingual Test</h1>
+            <time datetime="2024-01-02T00:00:00-05:00">
+                January 02, 2024
+            </time>
+        </div>
+    </header>
+
+    <div class="post-content">
+        <div class="bilingual-post">
+
+  <hr />
+  <p>layout: post
+title: “Automated Bilingual Test - 自动双语测试”
+date: 2024-01-02
+slug: automated-bilingual-test
+bilingual: true
+—</p>
+
+  <p>This post demonstrates the automated bilingual preprocessing with GitHub Actions! Users can now write content using the clean language syntax and GitHub Actions will automatically convert it to proper HTML.</p>
+
+  <div class="lang-content lang-en" data-lang="en">
+
+    <h2 id="english-content">English Content</h2>
+
+    <p>This is written using the user-friendly syntax! The GitHub Actions workflow will automatically convert this to the proper HTML structure.</p>
+
+    <h3 id="features">Features:</h3>
+    <ul>
+      <li><strong>Automatic processing</strong>: GitHub Actions processes files on every push</li>
+      <li><strong>Clean syntax</strong>: Write language markers instead of HTML divs</li>
+      <li><strong>Seamless integration</strong>: Works with GitHub Pages restrictions</li>
+      <li><strong>Zero configuration</strong>: Just push and the workflow handles everything</li>
+    </ul>
+
+    <p>The streaming parser processes this content character by character and converts it to the proper HTML structure that the bilingual JavaScript and CSS expect.</p>
+
+    <h3 id="how-it-works">How it works:</h3>
+    <ol>
+      <li>You write content using language markers</li>
+      <li>Push to GitHub</li>
+      <li>GitHub Actions automatically processes the files</li>
+      <li>Commits the converted HTML back to the repository</li>
+      <li>GitHub Pages builds the site with proper bilingual structure</li>
+    </ol>
+
+  </div>
+
+  <div class="lang-content lang-zh" data-lang="zh">
+
+    <h2 id="section">中文内容</h2>
+
+    <p>这是使用用户友好语法编写的！GitHub Actions 工作流程会自动将其转换为正确的 HTML 结构。</p>
+
+    <h3 id="section-1">特点：</h3>
+    <ul>
+      <li><strong>自动处理</strong>：GitHub Actions 在每次推送时处理文件</li>
+      <li><strong>清洁语法</strong>：写语言标记而不是 HTML div</li>
+      <li><strong>无缝集成</strong>：与 GitHub Pages 限制配合使用</li>
+      <li><strong>零配置</strong>：只需推送，工作流程处理一切</li>
+    </ul>
+
+    <p>流式解析器逐字符处理此内容，并将其转换为双语 JavaScript 和 CSS 期望的正确 HTML 结构。</p>
+
+    <h3 id="section-2">工作原理：</h3>
+    <ol>
+      <li>您使用语言标记编写内容</li>
+      <li>推送到 GitHub</li>
+      <li>GitHub Actions 自动处理文件</li>
+      <li>将转换后的 HTML 提交回存储库</li>
+      <li>GitHub Pages 使用正确的双语结构构建站点</li>
+    </ol>
+
+  </div>
+
+  <hr />
+
+  <p>This conclusion appears in both languages since it’s outside the language blocks. The GitHub Actions workflow automatically wraps language-specific content in the appropriate HTML divs and adds the bilingual container.</p>
+
+  <p><strong>Perfect for content creators!</strong> 🎉 No more manual HTML conversion needed!</p>
+
+</div>
+
+    </div>
+
+    <section class="comments">
+        <h2>Comments</h2>
+        <div id="comments-container"></div>
+        <script type="application/json" id="comments-data">
+            
+            null
+        </script>
+        
+        <div class="comment-info">
+            <!-- Language toggle for comment instructions (only show if post is bilingual) -->
+            
+            
+            <div class="lang-en">
+                <p><strong>How to add a comment:</strong></p>
+                <ol>
+                    <li>
+                        <a href="https://github.com/lsm/lsm.github.io/edit/main/_data/comments/2024-01-02-automated-bilingual-test.yml" target="_blank">
+                            Edit the comments file directly on GitHub
+                        </a>
+                    </li>
+                    <li>Add your comment using the YAML format</li>
+                    <li>Submit a pull request</li>
+                </ol>
+                <p>
+                    📝 <a href="https://github.com/lsm/lsm.github.io/blob/main/.github/COMMENT_TEMPLATE.md" target="_blank">
+                        View comment template and guidelines
+                    </a>
+                </p>
+            </div>
+            <div class="lang-zh">
+                <p><strong>如何添加评论：</strong></p>
+                <ol>
+                    <li>
+                        <a href="https://github.com/lsm/lsm.github.io/edit/main/_data/comments/2024-01-02-automated-bilingual-test.yml" target="_blank">
+                            直接在GitHub上编辑评论文件
+                        </a>
+                    </li>
+                    <li>使用YAML格式添加您的评论</li>
+                    <li>提交拉取请求</li>
+                </ol>
+                <p>
+                    📝 <a href="https://github.com/lsm/lsm.github.io/blob/main/.github/COMMENT_TEMPLATE.md" target="_blank">
+                        查看评论模板和指南
+                    </a>
+                </p>
+            </div>
+        </div>
+    </section>
+</article>
+
+<script src="/assets/js/comments.js"></script>
+
+
+    <footer>
+        <p>© 2025 Marc Liu</p>
+    </footer>
+
+    <script src="/assets/js/main.js"></script>
+</body>
+</html>

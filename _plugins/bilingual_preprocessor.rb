@@ -1,9 +1,11 @@
-#!/usr/bin/env ruby
+# Bilingual Content Preprocessor Plugin for Jekyll
+# Automatically converts :::lang:en / :::lang:zh / :::lang:end syntax to HTML divs
+# This allows users to write bilingual content naturally without manual preprocessing
 
-# Bilingual Markdown Preprocessor
-# Converts user-friendly :::lang:en / :::lang:end syntax to Jekyll-compatible HTML
-# Usage: ruby scripts/bilingual_preprocessor.rb input.md output.md
+# Load the streaming parser class
+require 'pathname'
 
+# Define the BilingualStreamingParser class directly in the plugin
 class BilingualStreamingParser
   def initialize(content)
     @content = content
@@ -16,13 +18,10 @@ class BilingualStreamingParser
   end
 
   def parse
-    puts "Starting streaming parse of #{@length} characters..."
-    
     while @position < @length
       char = current_char
       
       if char == ':' && looking_at(':::lang:')
-        puts "Found potential marker at position #{@position}"
         handle_language_marker
       else
         @buffer += char
@@ -33,21 +32,16 @@ class BilingualStreamingParser
     # Close any open language section
     if @current_lang
       @result << "\n\n</div>\n"
-      puts "Closed final language section"
     end
     
     # Add any remaining buffer content
     flush_buffer
     
-    puts "Parse complete. Found language content: #{@found_language_content}"
-    
     # Wrap in bilingual container if we found language sections
     if @found_language_content
       result = "<div class=\"bilingual-post\" markdown=\"1\">\n\n#{@result.join('')}\n\n</div>"
-      puts "Wrapped content in bilingual container"
       result
     else
-      puts "No language content found, returning original"
       @content
     end
   end
@@ -72,34 +66,26 @@ class BilingualStreamingParser
     flush_buffer
     marker = read_marker_line
     
-    puts "Read marker: '#{marker}'"
-    
     if marker == ':::lang:end'
       if @current_lang
         @result << "\n\n</div>\n"
         @current_lang = nil
-        puts "Ended language section"
       end
     elsif marker == ':::lang:en'
       start_language_section('en')
     elsif marker == ':::lang:zh'
       start_language_section('zh')
-    else
-      puts "Unknown marker: #{marker}"
     end
   end
 
   def start_language_section(lang)
     if @current_lang
       @result << "\n\n</div>\n"
-      puts "Closed previous language section"
     end
     
     @result << "\n<div class=\"lang-content lang-#{lang}\" data-lang=\"#{lang}\" markdown=\"1\">\n\n"
     @current_lang = lang
     @found_language_content = true
-    
-    puts "Started #{lang} section"
   end
 
   def read_marker_line
@@ -129,37 +115,37 @@ class BilingualStreamingParser
   end
 end
 
-# Example usage
-if __FILE__ == $0
-  if ARGV.length < 1
-    puts "Usage: ruby bilingual_preprocessor.rb input.md [output.md]"
-    puts ""
-    puts "Example input with user-friendly syntax:"
-    puts ""
-    puts ":::lang:en"
-    puts "English content here"
-    puts ":::lang:end"
-    puts ""
-    puts ":::lang:zh"
-    puts "中文内容在这里"
-    puts ":::lang:end"
-    puts ""
-    puts "This will be converted to Jekyll-compatible HTML divs."
-    exit 1
+module Jekyll
+  class BilingualPreprocessor < Generator
+    safe true
+    priority :high
+    
+    def generate(site)
+      Jekyll.logger.info "Bilingual Preprocessor:", "Starting preprocessing..."
+      
+      # Process all documents (posts, pages, etc.)
+      all_docs = site.documents + site.pages
+      
+      processed_count = 0
+      
+      all_docs.each do |doc|
+        # Only process documents that are marked as bilingual
+        next unless doc.data['bilingual']
+        
+        Jekyll.logger.info "Bilingual Preprocessor:", "Processing #{doc.relative_path || doc.name}"
+        
+        # Use the streaming parser to convert the content
+        parser = BilingualStreamingParser.new(doc.content)
+        processed_content = parser.parse
+        
+        # Update the document content with the processed version
+        doc.content = processed_content
+        
+        processed_count += 1
+        Jekyll.logger.debug "Bilingual Preprocessor:", "Processed content length: #{processed_content.length} characters"
+      end
+      
+      Jekyll.logger.info "Bilingual Preprocessor:", "Processed #{processed_count} bilingual documents"
+    end
   end
-
-  input_file = ARGV[0]
-  output_file = ARGV[1] || input_file  # In-place processing if no output file specified
-
-  if !File.exist?(input_file)
-    puts "Error: Input file '#{input_file}' not found"
-    exit 1
-  end
-
-  content = File.read(input_file)
-  parser = BilingualStreamingParser.new(content)
-  processed_content = parser.parse
-
-  File.write(output_file, processed_content)
-  puts "Processed content written to: #{output_file}"
 end 

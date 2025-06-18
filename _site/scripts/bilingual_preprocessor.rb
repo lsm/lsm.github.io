@@ -149,7 +149,7 @@ if __FILE__ == $0
   end
 
   input_file = ARGV[0]
-  output_file = ARGV[1] || input_file.gsub(/\.md$/, '_processed.md')
+  output_file = ARGV[1] || input_file  # In-place processing if no output file specified
 
   if !File.exist?(input_file)
     puts "Error: Input file '#{input_file}' not found"
