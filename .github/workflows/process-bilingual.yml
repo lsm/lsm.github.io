@@ -40,44 +40,37 @@ jobs:
       run: |
         echo "🔍 Looking for bilingual markdown files..."
         
-        # Find all markdown files with bilingual: true in front matter
-        bilingual_files=$(find . -name "*.md" -not -path "./_site/*" -not -path "./vendor/*" | xargs grep -l "bilingual: true" || true)
-        
-        if [ -z "$bilingual_files" ]; then
-          echo "📝 No bilingual files found to process"
-          exit 0
-        fi
-        
-        echo "📋 Found bilingual files:"
-        echo "$bilingual_files"
-        
-        # Process each bilingual file
+        # Initialize counter
         processed_count=0
-        for file in $bilingual_files; do
-          echo "🔄 Processing: $file"
-          
-          # Check if file contains :::lang: syntax
-          if grep -q ":::lang:" "$file"; then
-            echo "  → Found :::lang: syntax, processing..."
+        
+        # Process files individually to avoid shell issues
+        while IFS= read -r -d '' file; do
+          if [ -f "$file" ] && grep -q "bilingual: true" "$file"; then
+            echo "📋 Found bilingual file: $file"
             
-            # Create backup
-            cp "$file" "${file}.backup"
-            
-            # Process the file
-            if ruby scripts/bilingual_preprocessor.rb "$file"; then
-              echo "  ✅ Successfully processed $file"
-              processed_count=$((processed_count + 1))
+            # Check if file contains :::lang: syntax
+            if grep -q ":::lang:" "$file"; then
+              echo "🔄 Processing: $file (found :::lang: syntax)"
+              
+              # Create backup
+              cp "$file" "${file}.backup"
+              
+              # Process the file
+              if ruby scripts/bilingual_preprocessor.rb "$file"; then
+                echo "  ✅ Successfully processed $file"
+                processed_count=$((processed_count + 1))
+              else
+                echo "  ❌ Failed to process $file, restoring backup"
+                mv "${file}.backup" "$file"
+              fi
+              
+              # Clean up backup if processing succeeded
+              [ -f "${file}.backup" ] && rm "${file}.backup"
             else
-              echo "  ❌ Failed to process $file, restoring backup"
-              mv "${file}.backup" "$file"
+              echo "  → No :::lang: syntax found in $file, skipping"
             fi
-            
-            # Clean up backup if processing succeeded
-            [ -f "${file}.backup" ] && rm "${file}.backup"
-          else
-            echo "  → No :::lang: syntax found, skipping"
           fi
-        done
+        done < <(find . -name "*.md" -not -path "./_site/*" -not -path "./vendor/*" -print0)
         
         echo "📊 Processed $processed_count files"
         echo "PROCESSED_COUNT=$processed_count" >> $GITHUB_ENV
@@ -85,22 +78,18 @@ jobs:
     - name: Check for changes
       id: verify-changed-files
       run: |
-        if [ "$PROCESSED_COUNT" -gt 0 ]; then
-          if git diff --quiet; then
-            echo "No changes detected after processing"
-            echo "has_changes=false" >> $GITHUB_OUTPUT
-          else
-            echo "Changes detected after processing"
-            echo "has_changes=true" >> $GITHUB_OUTPUT
-            
-            echo "📋 Changed files:"
-            git diff --name-only
-            
-            echo "📝 Sample of changes:"
-            git diff --unified=3 | head -50
-          fi
-        else
+        if git diff --quiet; then
+          echo "No changes detected after processing"
           echo "has_changes=false" >> $GITHUB_OUTPUT
+        else
+          echo "Changes detected after processing"
+          echo "has_changes=true" >> $GITHUB_OUTPUT
+          
+          echo "📋 Changed files:"
+          git diff --name-only
+          
+          echo "📝 Sample of changes:"
+          git diff --unified=3 | head -50
         fi
     
     - name: Commit and push processed files
@@ -111,15 +100,16 @@ jobs:
         git add -A
         
         # Create single-line commit message to avoid issues
-        git commit -m "🤖 Auto-process bilingual content - Converted :::lang: syntax to HTML divs - Processed $PROCESSED_COUNT files [skip ci]"
+        git commit -m "🤖 Auto-process bilingual content - Converted :::lang: syntax to HTML divs [skip ci]"
         
         # Push directly using git
         git push origin main
     
     - name: Summary
       run: |
-        if [ "$PROCESSED_COUNT" -gt 0 ]; then
-          echo "🎉 Successfully processed $PROCESSED_COUNT bilingual files"
+        echo "📊 Processing summary:"
+        if [ "${PROCESSED_COUNT:-0}" -gt 0 ]; then
+          echo "🎉 Successfully processed ${PROCESSED_COUNT:-0} bilingual files"
           echo "✨ Files are now ready for Jekyll to build with proper HTML structure"
         else
           echo "📝 No bilingual files needed processing"
