@@ -1,7 +1,7 @@
 source "https://rubygems.org"
 
 # Specify Ruby version for compatibility
-ruby "3.3.4"
+ruby "3.4.4"
 
 # Use Jekyll directly instead of github-pages gem for more control
 gem "jekyll", "~> 4.4.1"

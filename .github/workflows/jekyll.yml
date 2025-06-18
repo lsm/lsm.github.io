@@ -32,8 +32,13 @@ jobs:
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: '3.3.4' # Match your local Ruby version
-          bundler-cache: true # runs 'bundle install' and caches installed gems automatically
+          ruby-version: '3.4.4' # Match your local Ruby version
+          bundler-cache: false # Disable cache to avoid frozen lock issues
+          
+      - name: Install dependencies
+        run: |
+          bundle config set frozen false
+          bundle install
           
       - name: Setup Pages
         uses: actions/configure-pages@v5
