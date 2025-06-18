@@ -41,32 +41,17 @@ document.addEventListener('DOMContentLoaded', () => {
     
     if (!langToggle || !bilingualPost) return;
     
-    // Get current language (should already be set by inline script)
-    const currentLang = document.documentElement.getAttribute('data-lang') || 'en';
-    updateToggleButton(currentLang);
-    
     // Add click event to language toggle
-    langToggle.addEventListener('click', () => {
+    langToggle.addEventListener('click', (e) => {
+        e.preventDefault();
         const currentLang = document.documentElement.getAttribute('data-lang') || 'en';
         const newLang = currentLang === 'en' ? 'zh' : 'en';
         
         switchLanguage(newLang);
-        updateToggleButton(newLang);
         localStorage.setItem('blog-language', newLang);
     });
     
     function switchLanguage(lang) {
         document.documentElement.setAttribute('data-lang', lang);
-    }
-    
-    function updateToggleButton(activeLang) {
-        const langOptions = langToggle.querySelectorAll('.lang-option');
-        langOptions.forEach(option => {
-            if (option.dataset.lang === activeLang) {
-                option.classList.add('active');
-            } else {
-                option.classList.remove('active');
-            }
-        });
     }
 });
