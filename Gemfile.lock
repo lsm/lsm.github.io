@@ -159,7 +159,6 @@ PLATFORMS
 DEPENDENCIES
   jekyll (~> 4.4.1)
   jekyll-feed
-  rake
   webrick
 
 RUBY VERSION
