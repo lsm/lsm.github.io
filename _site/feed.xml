@@ -1,4 +1,22 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2025-06-18T03:58:40-04:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Marc Liu</title><subtitle>A place to write</subtitle><entry><title type="html">Hello World - 你好，世界</title><link href="http://localhost:4000/hello-world/" rel="alternate" type="text/html" title="Hello World - 你好，世界" /><published>2024-01-01T00:00:00-05:00</published><updated>2024-01-01T00:00:00-05:00</updated><id>http://localhost:4000/hello-world</id><content type="html" xml:base="http://localhost:4000/hello-world/"><![CDATA[<div class="bilingual-post">
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2025-06-18T22:45:38-04:00</updated><id>/feed.xml</id><title type="html">Marc Liu</title><subtitle>A place to write</subtitle><entry><title type="html">Writing is fun!</title><link href="/writing-is-fun/" rel="alternate" type="text/html" title="Writing is fun!" /><published>2025-06-18T00:00:00-04:00</published><updated>2025-06-18T00:00:00-04:00</updated><id>/writing-is-fun</id><content type="html" xml:base="/writing-is-fun/"><![CDATA[<div class="bilingual-post">
+
+  <div class="lang-content lang-en" data-lang="en">
+
+    <p>Writing is fun!</p>
+
+    <p>Should write more.</p>
+
+  </div>
+
+  <div class="lang-content lang-zh" data-lang="zh">
+
+    <p>写作很有趣！</p>
+
+    <p>应该多写。</p>
+
+  </div>
+
+</div>]]></content><author><name></name></author><summary type="html"><![CDATA[Writing is fun!]]></summary></entry><entry><title type="html">Hello World - 你好，世界</title><link href="/hello-world/" rel="alternate" type="text/html" title="Hello World - 你好，世界" /><published>2024-01-01T00:00:00-05:00</published><updated>2024-01-01T00:00:00-05:00</updated><id>/hello-world</id><content type="html" xml:base="/hello-world/"><![CDATA[<div class="bilingual-post">
 
   <p>Welcome to this bilingual blog! This post demonstrates the streaming parser concept. Let me show you how the clean syntax works:</p>
 

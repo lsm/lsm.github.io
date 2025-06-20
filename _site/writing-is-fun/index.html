@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Writing is fun!</title>
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/custom.css">
+    
+    <!-- Initialize language preference before content loads to prevent flash -->
+    <script>
+        (function() {
+            const savedLang = localStorage.getItem('blog-language') || 'en';
+            document.documentElement.setAttribute('data-lang', savedLang);
+        })();
+    </script>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="/" class="site-title">Marc Liu</a>
+            <button id="theme-toggle" aria-label="Toggle theme">
+                <img id="sun-icon" class="theme-icon" src="/assets/icons/sun.svg" alt="Sun Icon">
+                <img id="moon-icon" class="theme-icon" src="/assets/icons/moon.svg" alt="Moon Icon" style="display: none;">
+            </button>
+        </nav>
+    </header>
+
+    <article class="post">
+    <header class="post-header">
+        <!-- Language toggle link (only show if post is bilingual) -->
+        
+        <div class="language-toggle">
+            <a href="#" id="lang-toggle" class="lang-toggle-link">
+                <span class="lang-switch-text" data-lang="zh">中文版</span>
+                <span class="lang-switch-text" data-lang="en">English Version</span>
+            </a>
+        </div>
+        
+        
+        <div class="post-title-row">
+            <h1>Writing is fun!</h1>
+            <time datetime="2025-06-18T00:00:00-04:00">
+                June 18, 2025
+            </time>
+        </div>
+    </header>
+
+    <div class="post-content">
+        <div class="bilingual-post">
+
+  <div class="lang-content lang-en" data-lang="en">
+
+    <p>Writing is fun!</p>
+
+    <p>Should write more.</p>
+
+  </div>
+
+  <div class="lang-content lang-zh" data-lang="zh">
+
+    <p>写作很有趣！</p>
+
+    <p>应该多写。</p>
+
+  </div>
+
+</div>
+
+    </div>
+
+    <section class="comments">
+        <h2>Comments</h2>
+        <div id="comments-container"></div>
+        <script type="application/json" id="comments-data">
+            
+            null
+        </script>
+        
+        <div class="comment-info">
+            <!-- Language toggle for comment instructions (only show if post is bilingual) -->
+            
+            <div class="comment-info-language-toggle">
+                <a href="#" id="comments-lang-toggle" class="lang-toggle-link">
+                    <span class="lang-switch-text" data-lang="zh">中文版</span>
+                    <span class="lang-switch-text" data-lang="en">English Version</span>
+                </a>
+            </div>
+            
+            
+            <div class="lang-en">
+                <p><strong>How to add a comment:</strong></p>
+                <ol>
+                    <li>
+                        <a href="https://github.com/lsm/lsm.github.io/edit/main/_data/comments/2025-06-18-writing-is-fun.yml" target="_blank">
+                            Edit the comments file directly on GitHub
+                        </a>
+                    </li>
+                    <li>Add your comment using the YAML format</li>
+                    <li>Submit a pull request</li>
+                </ol>
+                <p>
+                    📝 <a href="https://github.com/lsm/lsm.github.io/blob/main/.github/COMMENT_TEMPLATE.md" target="_blank">
+                        View comment template and guidelines
+                    </a>
+                </p>
+            </div>
+            <div class="lang-zh">
+                <p><strong>如何添加评论：</strong></p>
+                <ol>
+                    <li>
+                        <a href="https://github.com/lsm/lsm.github.io/edit/main/_data/comments/2025-06-18-writing-is-fun.yml" target="_blank">
+                            直接在GitHub上编辑评论文件
+                        </a>
+                    </li>
+                    <li>使用YAML格式添加您的评论</li>
+                    <li>提交拉取请求</li>
+                </ol>
+                <p>
+                    📝 <a href="https://github.com/lsm/lsm.github.io/blob/main/.github/COMMENT_TEMPLATE.md" target="_blank">
+                        查看评论模板和指南
+                    </a>
+                </p>
+            </div>
+        </div>
+    </section>
+</article>
+
+<script src="/assets/js/comments.js"></script>
+
+
+    <footer>
+        <p>© 2025 Marc Liu</p>
+    </footer>
+
+    <script src="/assets/js/main.js"></script>
+</body>
+</html>
